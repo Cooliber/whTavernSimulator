@@ -1,0 +1,14 @@
+# Vercel API requirements for Warhammer Fantasy Tavern Simulator
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-dotenv>=1.0.0
+openai>=1.0.0
+litellm>=1.0.0
+pandas>=2.0.0
+numpy>=1.21.0
+websockets>=11.0.0
+httpx>=0.25.0
+pydantic>=2.0.0
+structlog>=23.0.0
+python-multipart>=0.0.6
+crewai>=0.28.0

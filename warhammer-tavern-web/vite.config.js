@@ -27,7 +27,7 @@ export default defineConfig({
   // Build configuration
   build: {
     outDir: 'dist',
-    sourcemap: true,
+    sourcemap: false, // Disable for production
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
@@ -48,7 +48,8 @@ export default defineConfig({
         drop_console: true,
         drop_debugger: true
       }
-    }
+    },
+    chunkSizeWarningLimit: 1000
   },
   
   // Resolve configuration
