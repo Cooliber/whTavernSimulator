@@ -1,0 +1,22 @@
+[
+  {
+    "id": "db2ef4e1-84af-4194-8f21-130dcfef2e07",
+    "agent_id": "Berserker_Khorne",
+    "memory_type": "interaction",
+    "content": "Performance test memory 7 for Berserker_Khorne",
+    "importance": 2,
+    "timestamp": 1752423813.6914868,
+    "context": {
+      "test_id": 7,
+      "agent": "Berserker_Khorne"
+    },
+    "related_agents": [],
+    "tags": [
+      "performance",
+      "test"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 1,
+    "last_accessed": 1752423813.6915865
+  }
+]

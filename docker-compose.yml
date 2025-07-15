@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  tavern-simulator:
+    build: .
+    ports:
+      - "8501:8501"  # Main Streamlit application
+      - "8502:8502"  # Health check endpoints
+    environment:
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - CEREBRAS_API_KEY=${CEREBRAS_API_KEY}
+      - PYTHONPATH=/app
+      - STREAMLIT_SERVER_HEADLESS=true
+      - STREAMLIT_BROWSER_GATHER_USAGE_STATS=false
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8502/health/ready"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.tavern.rule=Host(`tavern.local`)"
+      - "traefik.http.services.tavern.loadbalancer.server.port=8501"
+
+  # Optional: Redis for caching (future enhancement)
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+    profiles:
+      - with-redis
+
+volumes:
+  redis_data:

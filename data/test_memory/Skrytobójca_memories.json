@@ -1,0 +1,16 @@
+[
+  {
+    "id": "c07b12ca-5091-4582-877c-23201a39bd14",
+    "agent_id": "Skrytob\u00f3jca",
+    "memory_type": "observation",
+    "content": "Observed potential threat",
+    "importance": 2,
+    "timestamp": 1752421058.5610607,
+    "context": {},
+    "related_agents": [],
+    "tags": [],
+    "decay_rate": 0.1,
+    "access_count": 0,
+    "last_accessed": 1752421058.561061
+  }
+]

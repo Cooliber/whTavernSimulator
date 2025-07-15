@@ -1,0 +1,16 @@
+[
+  {
+    "id": "ad1e82ec-912f-42e0-86f7-112fa15e2747",
+    "agent_id": "Karczmarz",
+    "memory_type": "observation",
+    "content": "Served ale to suspicious patron",
+    "importance": 2,
+    "timestamp": 1752421058.5609772,
+    "context": {},
+    "related_agents": [],
+    "tags": [],
+    "decay_rate": 0.1,
+    "access_count": 0,
+    "last_accessed": 1752421058.560978
+  }
+]

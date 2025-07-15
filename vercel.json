@@ -1,0 +1,64 @@
+{
+  "version": 2,
+  "name": "warhammer-tavern-simulator",
+  "builds": [
+    {
+      "src": "warhammer-tavern-web/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    },
+    {
+      "src": "start_api_server.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/start_api_server.py"
+    },
+    {
+      "src": "/ws",
+      "dest": "/start_api_server.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/warhammer-tavern-web/dist/$1"
+    }
+  ],
+  "env": {
+    "PYTHON_VERSION": "3.9"
+  },
+  "functions": {
+    "start_api_server.py": {
+      "runtime": "python3.9"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, PUT, DELETE, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type, Authorization"
+        }
+      ]
+    }
+  ]
+}

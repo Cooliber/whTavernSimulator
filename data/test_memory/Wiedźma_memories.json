@@ -1,0 +1,16 @@
+[
+  {
+    "id": "46b2cdc6-39f0-4b64-85e6-350d55b8fa5d",
+    "agent_id": "Wied\u017ama",
+    "memory_type": "observation",
+    "content": "Sensed dark energies",
+    "importance": 2,
+    "timestamp": 1752421058.5610929,
+    "context": {},
+    "related_agents": [],
+    "tags": [],
+    "decay_rate": 0.1,
+    "access_count": 0,
+    "last_accessed": 1752421058.561093
+  }
+]

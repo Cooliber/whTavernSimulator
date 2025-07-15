@@ -1,0 +1,47 @@
+{
+  "name": "warhammer-tavern-ultra-native",
+  "version": "1.0.0",
+  "description": "Ultra-Native GSAP Environment for Warhammer Fantasy Tavern Simulator",
+  "main": "api/index.py",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Python build complete'",
+    "start": "python3 streamlit_app_refactored.py",
+    "test": "python3 test_ultra_native_performance.py",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "warhammer",
+    "tavern",
+    "simulator",
+    "gsap",
+    "animation",
+    "streamlit",
+    "vercel"
+  ],
+  "author": "Warhammer Tavern Simulator Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "python": ">=3.11.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/warhammer-tavern-simulator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/warhammer-tavern-simulator/issues"
+  },
+  "homepage": "https://github.com/your-username/warhammer-tavern-simulator#readme",
+  "devDependencies": {
+    "@vercel/node": "^3.0.0"
+  },
+  "vercel": {
+    "functions": {
+      "api/index.py": {
+        "runtime": "python3.11",
+        "maxDuration": 30
+      }
+    }
+  }
+}

@@ -1,0 +1,129 @@
+[
+  {
+    "id": "903d64ce-22a9-46dd-8c18-ef80e16f9c89",
+    "agent_id": "Zwiadowca",
+    "memory_type": "interaction",
+    "content": "Economic transaction: Information exchange between agents",
+    "importance": 2,
+    "timestamp": 1752422244.778927,
+    "context": {
+      "id": "txn_1752422244_4436",
+      "transaction_type": "information_trade",
+      "participants": [
+        "Skrytob\u00f3jca",
+        "Zwiadowca"
+      ],
+      "resources_exchanged": {
+        "information": 5.0,
+        "gold": 15.0
+      },
+      "description": "Information exchange between agents",
+      "timestamp": 1752422244.77886,
+      "success": true,
+      "consequences": [
+        "Information network strengthened",
+        "Knowledge economy expanded"
+      ]
+    },
+    "related_agents": [],
+    "tags": [
+      "economy",
+      "transaction",
+      "information_trade"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 2,
+    "last_accessed": 1752423813.691589
+  },
+  {
+    "id": "146bcc69-62d2-4cef-b5da-b1c351a036a7",
+    "agent_id": "Zwiadowca",
+    "memory_type": "interaction",
+    "content": "Economic transaction: Information exchange between agents",
+    "importance": 2,
+    "timestamp": 1752422343.253936,
+    "context": {
+      "id": "txn_1752422343_6471",
+      "transaction_type": "information_trade",
+      "participants": [
+        "Skrytob\u00f3jca",
+        "Zwiadowca"
+      ],
+      "resources_exchanged": {
+        "information": 5.0,
+        "gold": 15.0
+      },
+      "description": "Information exchange between agents",
+      "timestamp": 1752422343.2538404,
+      "success": true,
+      "consequences": [
+        "Information network strengthened",
+        "Knowledge economy expanded"
+      ]
+    },
+    "related_agents": [],
+    "tags": [
+      "economy",
+      "transaction",
+      "information_trade"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 2,
+    "last_accessed": 1752423813.6915896
+  },
+  {
+    "id": "da692428-852a-4de4-9252-e910cf1f9066",
+    "agent_id": "Zwiadowca",
+    "memory_type": "interaction",
+    "content": "Economic transaction: Traded rumor for 8.0 reputation",
+    "importance": 2,
+    "timestamp": 1752422343.2555482,
+    "context": {
+      "id": "txn_1752422343_7281",
+      "transaction_type": "information_trade",
+      "participants": [
+        "Zwiadowca",
+        "TavernMarket"
+      ],
+      "resources_exchanged": {
+        "reputation": 8.0
+      },
+      "description": "Traded rumor for 8.0 reputation",
+      "timestamp": 1752422343.255519,
+      "success": true,
+      "consequences": [
+        "Information network strengthened",
+        "Knowledge economy expanded"
+      ]
+    },
+    "related_agents": [],
+    "tags": [
+      "economy",
+      "transaction",
+      "information_trade"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 2,
+    "last_accessed": 1752423813.6915898
+  },
+  {
+    "id": "3d162f45-c464-4908-a52b-50057c2b7a64",
+    "agent_id": "Zwiadowca",
+    "memory_type": "interaction",
+    "content": "Performance test memory 9 for Zwiadowca",
+    "importance": 2,
+    "timestamp": 1752423813.691499,
+    "context": {
+      "test_id": 9,
+      "agent": "Zwiadowca"
+    },
+    "related_agents": [],
+    "tags": [
+      "performance",
+      "test"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 1,
+    "last_accessed": 1752423813.6915903
+  }
+]

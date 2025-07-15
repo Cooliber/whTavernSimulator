@@ -1,0 +1,22 @@
+[
+  {
+    "id": "b952ffce-bc82-4296-a747-c3e5daf9ea2d",
+    "agent_id": "\u0141owca_Nagr\u00f3d",
+    "memory_type": "interaction",
+    "content": "Performance test memory 17 for \u0141owca_Nagr\u00f3d",
+    "importance": 2,
+    "timestamp": 1752423813.691551,
+    "context": {
+      "test_id": 17,
+      "agent": "\u0141owca_Nagr\u00f3d"
+    },
+    "related_agents": [],
+    "tags": [
+      "performance",
+      "test"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 1,
+    "last_accessed": 1752423813.6916032
+  }
+]

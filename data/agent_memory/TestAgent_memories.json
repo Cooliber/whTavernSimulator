@@ -1,0 +1,21 @@
+[
+  {
+    "id": "ee7ff92d-86bf-4670-9e58-2bd4ace30b15",
+    "agent_id": "TestAgent",
+    "memory_type": "observation",
+    "content": "Test memory for retry mechanism",
+    "importance": 2,
+    "timestamp": 1752423584.4624586,
+    "context": {
+      "test": "retry_data"
+    },
+    "related_agents": [],
+    "tags": [
+      "test",
+      "retry"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 0,
+    "last_accessed": 1752423584.462459
+  }
+]

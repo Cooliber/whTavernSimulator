@@ -1,0 +1,22 @@
+[
+  {
+    "id": "6787262a-8add-4317-a1b0-b2ecccf5eaa3",
+    "agent_id": "Handlarz_Halfling",
+    "memory_type": "interaction",
+    "content": "Performance test memory 18 for Handlarz_Halfling",
+    "importance": 2,
+    "timestamp": 1752423813.6915574,
+    "context": {
+      "test_id": 18,
+      "agent": "Handlarz_Halfling"
+    },
+    "related_agents": [],
+    "tags": [
+      "performance",
+      "test"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 1,
+    "last_accessed": 1752423813.6916041
+  }
+]

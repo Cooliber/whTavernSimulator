@@ -1,0 +1,86 @@
+[
+  {
+    "id": "9be071dc-e1ec-4359-8d0d-f0d0412ee762",
+    "agent_id": "Kupiec_Imperialny",
+    "memory_type": "interaction",
+    "content": "Performance test memory 3 for Kupiec_Imperialny",
+    "importance": 2,
+    "timestamp": 1752423813.6914563,
+    "context": {
+      "test_id": 3,
+      "agent": "Kupiec_Imperialny"
+    },
+    "related_agents": [],
+    "tags": [
+      "performance",
+      "test"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 1,
+    "last_accessed": 1752423813.6915796
+  },
+  {
+    "id": "1d1e288c-21d1-4cd5-a66f-620dfae80b71",
+    "agent_id": "Kupiec_Imperialny",
+    "memory_type": "interaction",
+    "content": "Economic transaction: Error test: Insufficient resources",
+    "importance": 2,
+    "timestamp": 1752425326.4452107,
+    "context": {
+      "id": "txn_1752425326_4338",
+      "transaction_type": "purchase",
+      "participants": [
+        "Karczmarz",
+        "Kupiec_Imperialny"
+      ],
+      "resources_exchanged": {
+        "gold": 999999.0
+      },
+      "description": "Error test: Insufficient resources",
+      "timestamp": 1752425326.4450426,
+      "success": false,
+      "consequences": []
+    },
+    "related_agents": [],
+    "tags": [
+      "economy",
+      "transaction",
+      "purchase"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 0,
+    "last_accessed": 1752425326.445211
+  },
+  {
+    "id": "0fa5ec25-4a83-4118-a3d5-045bca0f4c6b",
+    "agent_id": "Kupiec_Imperialny",
+    "memory_type": "interaction",
+    "content": "Economic transaction: Error test: Invalid resource type",
+    "importance": 2,
+    "timestamp": 1752425326.4455454,
+    "context": {
+      "id": "txn_1752425326_9896",
+      "transaction_type": "purchase",
+      "participants": [
+        "Karczmarz",
+        "Kupiec_Imperialny"
+      ],
+      "resources_exchanged": {
+        "invalid": 1.0
+      },
+      "description": "Error test: Invalid resource type",
+      "timestamp": 1752425326.4454584,
+      "success": false,
+      "consequences": []
+    },
+    "related_agents": [],
+    "tags": [
+      "economy",
+      "transaction",
+      "purchase"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 0,
+    "last_accessed": 1752425326.4455457
+  }
+]

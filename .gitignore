@@ -1,0 +1,126 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# API Keys and secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+config/secrets.py
+secrets.json
+
+# Node.js (for frontend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# React build
+warhammer-tavern-web/dist/
+warhammer-tavern-web/build/
+warhammer-tavern-web/.next/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Backup files
+*.bak
+*.backup
+*_backup.*
+*_old.*
+
+# Test coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# Streamlit
+.streamlit/
+
+# Local data
+data/local/
+data/temp/
+data/cache/
+
+# Vercel
+.vercel
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# AI model cache
+.cache/
+models/cache/
+
+# Memory files
+memory/
+*.memory
+
+# Session data
+sessions/
+*.session

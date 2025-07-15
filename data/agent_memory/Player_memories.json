@@ -1,0 +1,59 @@
+[
+  {
+    "id": "73f40655-27c6-420d-913c-b5b5d40e1ed8",
+    "agent_id": "Player",
+    "memory_type": "interaction",
+    "content": "Player action: investigate_hooded_figures",
+    "importance": 3,
+    "timestamp": 1752421524.433906,
+    "context": {
+      "action_type": "player_action"
+    },
+    "related_agents": [],
+    "tags": [
+      "player",
+      "action"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 0,
+    "last_accessed": 1752421524.4339063
+  },
+  {
+    "id": "3ddf4f00-bc3e-4175-9a99-609a212f875c",
+    "agent_id": "Player",
+    "memory_type": "interaction",
+    "content": "Player action: ask_karczmarz_about_rumors",
+    "importance": 3,
+    "timestamp": 1752421524.4339333,
+    "context": {
+      "action_type": "player_action"
+    },
+    "related_agents": [],
+    "tags": [
+      "player",
+      "action"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 0,
+    "last_accessed": 1752421524.4339335
+  },
+  {
+    "id": "fdfdc057-0fcb-4f60-8821-69c1d7711824",
+    "agent_id": "Player",
+    "memory_type": "interaction",
+    "content": "Player action: challenge_suspicious_patron",
+    "importance": 3,
+    "timestamp": 1752421524.4339454,
+    "context": {
+      "action_type": "player_action"
+    },
+    "related_agents": [],
+    "tags": [
+      "player",
+      "action"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 0,
+    "last_accessed": 1752421524.4339457
+  }
+]

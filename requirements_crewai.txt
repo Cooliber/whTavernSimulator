@@ -1,0 +1,43 @@
+# Warhammer Fantasy Tavern Simulator - CrewAI Edition
+# Requirements for CrewAI + Grok + Cerebras + GSAP integration
+
+# Core CrewAI framework
+crewai==0.141.0
+
+# FastAPI Backend for Web Interface
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+websockets==12.0
+
+# Streamlit for UI (legacy support)
+streamlit==1.46.1
+
+# Environment management
+python-dotenv==1.1.1
+
+# LLM integrations
+openai>=1.95.1
+litellm==1.72.6
+
+# Data processing
+pandas>=2.3.1
+numpy>=2.3.1
+
+# Additional utilities
+requests>=2.32.4
+pydantic>=2.11.7
+typing-extensions>=4.14.1
+
+# CORS and middleware
+python-multipart==0.0.6
+python-jose[cryptography]==3.3.0
+
+# Development and testing
+pytest>=8.0.0
+black>=24.0.0
+flake8>=7.0.0
+httpx>=0.25.0  # For testing FastAPI
+
+# Optional: For enhanced functionality
+# chromadb>=1.0.15  # Vector database for advanced memory
+# pyvis>=0.3.2      # Network visualization

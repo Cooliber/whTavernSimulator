@@ -1,0 +1,22 @@
+[
+  {
+    "id": "4fb5ea44-8d5d-4354-9b35-9fe88f327019",
+    "agent_id": "Czarodziej_Jasno\u015bci",
+    "memory_type": "interaction",
+    "content": "Performance test memory 4 for Czarodziej_Jasno\u015bci",
+    "importance": 2,
+    "timestamp": 1752423813.691464,
+    "context": {
+      "test_id": 4,
+      "agent": "Czarodziej_Jasno\u015bci"
+    },
+    "related_agents": [],
+    "tags": [
+      "performance",
+      "test"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 1,
+    "last_accessed": 1752423813.6915815
+  }
+]

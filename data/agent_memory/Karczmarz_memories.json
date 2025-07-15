@@ -1,0 +1,224 @@
+[
+  {
+    "id": "5ce876d5-2f10-4dc5-8857-77e3a38a897e",
+    "agent_id": "Karczmarz",
+    "memory_type": "interaction",
+    "content": "Economic transaction: Karczmarz buys supplies for tavern",
+    "importance": 2,
+    "timestamp": 1752422244.7786846,
+    "context": {
+      "id": "txn_1752422244_8751",
+      "transaction_type": "purchase",
+      "participants": [
+        "Karczmarz",
+        "TavernMarket"
+      ],
+      "resources_exchanged": {
+        "gold": 20.0,
+        "supplies": 10.0
+      },
+      "description": "Karczmarz buys supplies for tavern",
+      "timestamp": 1752422244.7785904,
+      "success": true,
+      "consequences": []
+    },
+    "related_agents": [],
+    "tags": [
+      "economy",
+      "transaction",
+      "purchase"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 2,
+    "last_accessed": 1752423813.691566
+  },
+  {
+    "id": "9dcc2bc5-0686-4fe8-aa3e-29a724ec73ee",
+    "agent_id": "Karczmarz",
+    "memory_type": "interaction",
+    "content": "Economic transaction: Favor for reputation trade",
+    "importance": 2,
+    "timestamp": 1752422244.77925,
+    "context": {
+      "id": "txn_1752422244_8402",
+      "transaction_type": "favor_exchange",
+      "participants": [
+        "Wied\u017ama",
+        "Karczmarz"
+      ],
+      "resources_exchanged": {
+        "favors": 2.0,
+        "reputation": 3.0
+      },
+      "description": "Favor for reputation trade",
+      "timestamp": 1752422244.7791944,
+      "success": true,
+      "consequences": [
+        "Social bonds reinforced",
+        "Future obligations created"
+      ]
+    },
+    "related_agents": [],
+    "tags": [
+      "economy",
+      "transaction",
+      "favor_exchange"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 2,
+    "last_accessed": 1752423813.6915677
+  },
+  {
+    "id": "95645445-20ab-4e4b-8743-fbd74d3ba4ba",
+    "agent_id": "Karczmarz",
+    "memory_type": "interaction",
+    "content": "Economic transaction: Karczmarz buys supplies for tavern",
+    "importance": 2,
+    "timestamp": 1752422343.2535145,
+    "context": {
+      "id": "txn_1752422343_2327",
+      "transaction_type": "purchase",
+      "participants": [
+        "Karczmarz",
+        "TavernMarket"
+      ],
+      "resources_exchanged": {
+        "gold": 20.0,
+        "supplies": 10.0
+      },
+      "description": "Karczmarz buys supplies for tavern",
+      "timestamp": 1752422343.2533166,
+      "success": true,
+      "consequences": []
+    },
+    "related_agents": [],
+    "tags": [
+      "economy",
+      "transaction",
+      "purchase"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 2,
+    "last_accessed": 1752423813.6915684
+  },
+  {
+    "id": "a2fbff67-a86b-4299-bb66-b84093034e38",
+    "agent_id": "Karczmarz",
+    "memory_type": "interaction",
+    "content": "Economic transaction: Favor for reputation trade",
+    "importance": 2,
+    "timestamp": 1752422343.2542884,
+    "context": {
+      "id": "txn_1752422343_5194",
+      "transaction_type": "favor_exchange",
+      "participants": [
+        "Wied\u017ama",
+        "Karczmarz"
+      ],
+      "resources_exchanged": {
+        "favors": 2.0,
+        "reputation": 3.0
+      },
+      "description": "Favor for reputation trade",
+      "timestamp": 1752422343.2542264,
+      "success": true,
+      "consequences": [
+        "Social bonds reinforced",
+        "Future obligations created"
+      ]
+    },
+    "related_agents": [],
+    "tags": [
+      "economy",
+      "transaction",
+      "favor_exchange"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 2,
+    "last_accessed": 1752423813.6915686
+  },
+  {
+    "id": "982e54af-5ac6-450e-9dda-a69ebbe7fd30",
+    "agent_id": "Karczmarz",
+    "memory_type": "interaction",
+    "content": "Performance test memory 1 for Karczmarz",
+    "importance": 2,
+    "timestamp": 1752423813.6914263,
+    "context": {
+      "test_id": 1,
+      "agent": "Karczmarz"
+    },
+    "related_agents": [],
+    "tags": [
+      "performance",
+      "test"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 1,
+    "last_accessed": 1752423813.6915693
+  },
+  {
+    "id": "15b3dccc-8e1b-486e-8e13-32b074c25b58",
+    "agent_id": "Karczmarz",
+    "memory_type": "interaction",
+    "content": "Economic transaction: Error test: Insufficient resources",
+    "importance": 2,
+    "timestamp": 1752425326.445154,
+    "context": {
+      "id": "txn_1752425326_4338",
+      "transaction_type": "purchase",
+      "participants": [
+        "Karczmarz",
+        "Kupiec_Imperialny"
+      ],
+      "resources_exchanged": {
+        "gold": 999999.0
+      },
+      "description": "Error test: Insufficient resources",
+      "timestamp": 1752425326.4450426,
+      "success": false,
+      "consequences": []
+    },
+    "related_agents": [],
+    "tags": [
+      "economy",
+      "transaction",
+      "purchase"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 0,
+    "last_accessed": 1752425326.445155
+  },
+  {
+    "id": "8357a300-b139-4cc4-acf3-d4b01491dbff",
+    "agent_id": "Karczmarz",
+    "memory_type": "interaction",
+    "content": "Economic transaction: Error test: Invalid resource type",
+    "importance": 2,
+    "timestamp": 1752425326.4454958,
+    "context": {
+      "id": "txn_1752425326_9896",
+      "transaction_type": "purchase",
+      "participants": [
+        "Karczmarz",
+        "Kupiec_Imperialny"
+      ],
+      "resources_exchanged": {
+        "invalid": 1.0
+      },
+      "description": "Error test: Invalid resource type",
+      "timestamp": 1752425326.4454584,
+      "success": false,
+      "consequences": []
+    },
+    "related_agents": [],
+    "tags": [
+      "economy",
+      "transaction",
+      "purchase"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 0,
+    "last_accessed": 1752425326.4454963
+  }
+]

@@ -1,0 +1,129 @@
+[
+  {
+    "id": "f1182367-aba4-4af0-a4d9-a8c5d06cdbfb",
+    "agent_id": "Wied\u017ama",
+    "memory_type": "interaction",
+    "content": "Economic transaction: Favor for reputation trade",
+    "importance": 2,
+    "timestamp": 1752422244.7792218,
+    "context": {
+      "id": "txn_1752422244_8402",
+      "transaction_type": "favor_exchange",
+      "participants": [
+        "Wied\u017ama",
+        "Karczmarz"
+      ],
+      "resources_exchanged": {
+        "favors": 2.0,
+        "reputation": 3.0
+      },
+      "description": "Favor for reputation trade",
+      "timestamp": 1752422244.7791944,
+      "success": true,
+      "consequences": [
+        "Social bonds reinforced",
+        "Future obligations created"
+      ]
+    },
+    "related_agents": [],
+    "tags": [
+      "economy",
+      "transaction",
+      "favor_exchange"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 2,
+    "last_accessed": 1752423813.6915998
+  },
+  {
+    "id": "54b4113f-475d-48b4-8022-4e00e4f64c8c",
+    "agent_id": "Wied\u017ama",
+    "memory_type": "interaction",
+    "content": "Economic transaction: Favor for reputation trade",
+    "importance": 2,
+    "timestamp": 1752422343.2542572,
+    "context": {
+      "id": "txn_1752422343_5194",
+      "transaction_type": "favor_exchange",
+      "participants": [
+        "Wied\u017ama",
+        "Karczmarz"
+      ],
+      "resources_exchanged": {
+        "favors": 2.0,
+        "reputation": 3.0
+      },
+      "description": "Favor for reputation trade",
+      "timestamp": 1752422343.2542264,
+      "success": true,
+      "consequences": [
+        "Social bonds reinforced",
+        "Future obligations created"
+      ]
+    },
+    "related_agents": [],
+    "tags": [
+      "economy",
+      "transaction",
+      "favor_exchange"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 2,
+    "last_accessed": 1752423813.6916003
+  },
+  {
+    "id": "8bd32ac4-4fe9-4b2d-96cc-094240d04b3f",
+    "agent_id": "Wied\u017ama",
+    "memory_type": "interaction",
+    "content": "Economic transaction: Traded rumor for 10.0 influence",
+    "importance": 2,
+    "timestamp": 1752422343.2552707,
+    "context": {
+      "id": "txn_1752422343_2580",
+      "transaction_type": "information_trade",
+      "participants": [
+        "Wied\u017ama",
+        "TavernMarket"
+      ],
+      "resources_exchanged": {
+        "influence": 10.0
+      },
+      "description": "Traded rumor for 10.0 influence",
+      "timestamp": 1752422343.2552347,
+      "success": true,
+      "consequences": [
+        "Information network strengthened",
+        "Knowledge economy expanded"
+      ]
+    },
+    "related_agents": [],
+    "tags": [
+      "economy",
+      "transaction",
+      "information_trade"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 2,
+    "last_accessed": 1752423813.6916006
+  },
+  {
+    "id": "79626cb5-a560-4f02-ab82-bb6888e39350",
+    "agent_id": "Wied\u017ama",
+    "memory_type": "interaction",
+    "content": "Performance test memory 16 for Wied\u017ama",
+    "importance": 2,
+    "timestamp": 1752423813.6915443,
+    "context": {
+      "test_id": 16,
+      "agent": "Wied\u017ama"
+    },
+    "related_agents": [],
+    "tags": [
+      "performance",
+      "test"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 1,
+    "last_accessed": 1752423813.691601
+  }
+]

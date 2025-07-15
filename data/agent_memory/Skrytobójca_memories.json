@@ -1,0 +1,109 @@
+[
+  {
+    "id": "3abf93c4-3c8f-4e49-b8fb-81c41e913b43",
+    "agent_id": "Skrytob\u00f3jca",
+    "memory_type": "interaction",
+    "content": "Economic transaction: Information exchange between agents",
+    "importance": 2,
+    "timestamp": 1752422244.7788954,
+    "context": {
+      "id": "txn_1752422244_4436",
+      "transaction_type": "information_trade",
+      "participants": [
+        "Skrytob\u00f3jca",
+        "Zwiadowca"
+      ],
+      "resources_exchanged": {
+        "information": 5.0,
+        "gold": 15.0
+      },
+      "description": "Information exchange between agents",
+      "timestamp": 1752422244.77886,
+      "success": true,
+      "consequences": [
+        "Information network strengthened",
+        "Knowledge economy expanded"
+      ]
+    },
+    "related_agents": [],
+    "tags": [
+      "economy",
+      "transaction",
+      "information_trade"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 0,
+    "last_accessed": 1752422244.7788959
+  },
+  {
+    "id": "a84bd821-a7c8-4957-99fb-82f1d5aa4d7f",
+    "agent_id": "Skrytob\u00f3jca",
+    "memory_type": "interaction",
+    "content": "Economic transaction: Information exchange between agents",
+    "importance": 2,
+    "timestamp": 1752422343.2538989,
+    "context": {
+      "id": "txn_1752422343_6471",
+      "transaction_type": "information_trade",
+      "participants": [
+        "Skrytob\u00f3jca",
+        "Zwiadowca"
+      ],
+      "resources_exchanged": {
+        "information": 5.0,
+        "gold": 15.0
+      },
+      "description": "Information exchange between agents",
+      "timestamp": 1752422343.2538404,
+      "success": true,
+      "consequences": [
+        "Information network strengthened",
+        "Knowledge economy expanded"
+      ]
+    },
+    "related_agents": [],
+    "tags": [
+      "economy",
+      "transaction",
+      "information_trade"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 0,
+    "last_accessed": 1752422343.2538993
+  },
+  {
+    "id": "59691b7d-92f5-4be1-8977-6027e0f0b34a",
+    "agent_id": "Skrytob\u00f3jca",
+    "memory_type": "interaction",
+    "content": "Economic transaction: Traded rumor for 25.0 gold",
+    "importance": 2,
+    "timestamp": 1752422343.254801,
+    "context": {
+      "id": "txn_1752422343_6888",
+      "transaction_type": "information_trade",
+      "participants": [
+        "Skrytob\u00f3jca",
+        "TavernMarket"
+      ],
+      "resources_exchanged": {
+        "gold": 25.0
+      },
+      "description": "Traded rumor for 25.0 gold",
+      "timestamp": 1752422343.254767,
+      "success": true,
+      "consequences": [
+        "Information network strengthened",
+        "Knowledge economy expanded"
+      ]
+    },
+    "related_agents": [],
+    "tags": [
+      "economy",
+      "transaction",
+      "information_trade"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 0,
+    "last_accessed": 1752422343.2548018
+  }
+]

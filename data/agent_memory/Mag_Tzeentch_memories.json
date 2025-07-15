@@ -1,0 +1,22 @@
+[
+  {
+    "id": "e70f1e8f-cff6-470e-844f-947d951ccade",
+    "agent_id": "Mag_Tzeentch",
+    "memory_type": "interaction",
+    "content": "Performance test memory 8 for Mag_Tzeentch",
+    "importance": 2,
+    "timestamp": 1752423813.6914928,
+    "context": {
+      "test_id": 8,
+      "agent": "Mag_Tzeentch"
+    },
+    "related_agents": [],
+    "tags": [
+      "performance",
+      "test"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 1,
+    "last_accessed": 1752423813.691588
+  }
+]

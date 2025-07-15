@@ -1,0 +1,145 @@
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+crewai_env/
+venv/
+env/
+ENV/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test files
+test_*.py
+*_test.py
+tests/
+
+# Documentation (keep only essential)
+*.md
+!README.md
+!ULTRA_NATIVE_DEPLOYMENT.md
+
+# Data files (too large for deployment)
+data/
+*.json
+!package.json
+!vercel.json
+!deployment_info.json
+
+# Docker files
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Git
+.git/
+.gitignore
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Large HTML files (generated dynamically)
+*.html
+!ultra_native_standalone_demo.html
+
+# Shell scripts
+*.sh
+
+# Requirements files (keep only Vercel-specific)
+requirements.txt
+requirements_crewai.txt
+!requirements_vercel.txt
+
+# Configuration files
+.env
+.env.local
+.env.production
+
+# Backup files
+*.bak
+*.backup
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json

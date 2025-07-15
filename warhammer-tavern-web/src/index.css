@@ -1,0 +1,428 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Warhammer Fantasy Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+/* CSS Variables for Warhammer Fantasy Theme */
+:root {
+  /* Faction Colors */
+  --empire-primary: #FFD700;
+  --empire-secondary: #B8860B;
+  --empire-tertiary: #8B6914;
+  
+  --chaos-primary: #8B0000;
+  --chaos-secondary: #FF0000;
+  --chaos-tertiary: #4A0000;
+  
+  --elves-primary: #98FB98;
+  --elves-secondary: #228B22;
+  --elves-tertiary: #006400;
+  
+  --dwarfs-primary: #DAA520;
+  --dwarfs-secondary: #B8860B;
+  --dwarfs-tertiary: #8B6914;
+  
+  --orcs-primary: #228B22;
+  --orcs-secondary: #006400;
+  --orcs-tertiary: #8FBC8F;
+  
+  --undead-primary: #800080;
+  --undead-secondary: #4B0082;
+  --undead-tertiary: #2F1B69;
+  
+  /* Tavern Atmosphere */
+  --tavern-wood: #8B4513;
+  --tavern-stone: #696969;
+  --tavern-fire: #FF4500;
+  --tavern-shadow: #2F1B14;
+  --tavern-gold: #FFD700;
+  
+  /* Animation Timings */
+  --animation-fast: 0.2s;
+  --animation-normal: 0.3s;
+  --animation-slow: 0.5s;
+  --animation-very-slow: 1s;
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, var(--tavern-shadow), #1e293b, #0f172a);
+  color: #f1f5f9;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--tavern-gold), #b8860b);
+  border-radius: 4px;
+  border: 1px solid #334155;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #ffd700, var(--tavern-gold));
+}
+
+/* Warhammer Fantasy Typography */
+.font-medieval {
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+.font-fantasy {
+  font-family: 'Uncial Antiqua', cursive;
+  font-weight: 400;
+}
+
+.font-sharp {
+  font-family: 'MedievalSharp', cursive;
+  font-weight: 400;
+}
+
+/* Text Effects */
+.text-glow {
+  text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+}
+
+.text-glow-lg {
+  text-shadow: 0 0 15px currentColor, 0 0 30px currentColor, 0 0 45px currentColor;
+}
+
+.text-fire-glow {
+  text-shadow: 
+    0 0 5px #ff4500,
+    0 0 10px #ff4500,
+    0 0 15px #ff4500,
+    0 0 20px #ff6347;
+}
+
+/* Background Patterns */
+.bg-tavern-pattern {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(160, 82, 45, 0.1) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 40%, rgba(255, 215, 0, 0.02) 50%, transparent 60%);
+}
+
+.bg-fire-glow {
+  background: radial-gradient(circle, #ff4500, #ff6347, transparent);
+}
+
+/* Faction-specific Utilities */
+.faction-empire {
+  --faction-color: var(--empire-primary);
+  color: var(--faction-color);
+  border-color: var(--faction-color);
+}
+
+.faction-chaos {
+  --faction-color: var(--chaos-primary);
+  color: var(--faction-color);
+  border-color: var(--faction-color);
+}
+
+.faction-elves {
+  --faction-color: var(--elves-primary);
+  color: var(--faction-color);
+  border-color: var(--faction-color);
+}
+
+.faction-dwarfs {
+  --faction-color: var(--dwarfs-primary);
+  color: var(--faction-color);
+  border-color: var(--faction-color);
+}
+
+.faction-orcs {
+  --faction-color: var(--orcs-primary);
+  color: var(--faction-color);
+  border-color: var(--faction-color);
+}
+
+.faction-undead {
+  --faction-color: var(--undead-primary);
+  color: var(--faction-color);
+  border-color: var(--faction-color);
+}
+
+/* Custom Animations */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes tavern-ambient {
+  0%, 100% { 
+    background-position: 0% 50%;
+  }
+  50% { 
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes rune-glow {
+  0%, 100% {
+    text-shadow: 0 0 5px currentColor;
+    opacity: 0.8;
+  }
+  50% {
+    text-shadow: 0 0 15px currentColor, 0 0 25px currentColor;
+    opacity: 1;
+  }
+}
+
+@keyframes chaos-corruption {
+  0% { 
+    filter: hue-rotate(0deg) saturate(1);
+  }
+  25% { 
+    filter: hue-rotate(90deg) saturate(1.2);
+  }
+  50% { 
+    filter: hue-rotate(180deg) saturate(1.5);
+  }
+  75% { 
+    filter: hue-rotate(270deg) saturate(1.2);
+  }
+  100% { 
+    filter: hue-rotate(360deg) saturate(1);
+  }
+}
+
+/* Animation Classes */
+.animate-flicker {
+  animation: flicker 1.5s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.animate-tavern-ambient {
+  animation: tavern-ambient 10s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
+.animate-rune-glow {
+  animation: rune-glow 2s ease-in-out infinite;
+}
+
+.animate-chaos-corruption {
+  animation: chaos-corruption 3s ease-in-out infinite;
+}
+
+/* Interactive Elements */
+.tavern-button {
+  @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+  @apply bg-gradient-to-r from-amber-600 to-amber-700;
+  @apply hover:from-amber-500 hover:to-amber-600;
+  @apply active:scale-95;
+  @apply shadow-lg hover:shadow-xl;
+  @apply border border-amber-500/30;
+  position: relative;
+  overflow: hidden;
+}
+
+.tavern-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.tavern-button:hover::before {
+  left: 100%;
+}
+
+.character-card {
+  @apply bg-slate-800/90 rounded-lg border border-slate-700;
+  @apply hover:border-slate-600 hover:shadow-lg;
+  @apply transition-all duration-300;
+  @apply backdrop-blur-sm;
+  position: relative;
+  overflow: hidden;
+}
+
+.character-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--faction-color, #ffd700), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.character-card:hover::after {
+  opacity: 1;
+}
+
+/* Particle System */
+.particle-system {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  pointer-events: none;
+}
+
+.particle.golden_sparks {
+  width: 3px;
+  height: 3px;
+  background: radial-gradient(circle, #ffd700, #ffa500);
+  border-radius: 50%;
+  box-shadow: 0 0 6px #ffd700;
+}
+
+.particle.chaos_corruption {
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #8b0000, #ff0000);
+  border-radius: 50%;
+  box-shadow: 0 0 8px #8b0000;
+  filter: blur(1px);
+}
+
+.particle.elven_light {
+  width: 2px;
+  height: 2px;
+  background: radial-gradient(circle, #98fb98, #00ff7f);
+  border-radius: 50%;
+  box-shadow: 0 0 10px #98fb98;
+}
+
+.particle.forge_sparks {
+  width: 2px;
+  height: 6px;
+  background: linear-gradient(to bottom, #ffd700, #ff4500);
+  border-radius: 1px;
+  box-shadow: 0 0 4px #ffd700;
+}
+
+.particle.necromantic_mist {
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, rgba(128,0,128,0.7), rgba(75,0,130,0.4));
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(128,0,128,0.5);
+  filter: blur(1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .font-medieval {
+    font-size: 0.9em;
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
+  }
+  
+  .tavern-button {
+    @apply px-4 py-2 text-sm;
+  }
+}
+
+/* Dark Mode Enhancements */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .animate-flicker,
+  .animate-float,
+  .animate-glow-pulse,
+  .animate-tavern-ambient,
+  .animate-rune-glow,
+  .animate-chaos-corruption {
+    animation: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .bg-gradient-to-br,
+  .bg-tavern-pattern,
+  .bg-fire-glow {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .text-glow,
+  .text-glow-lg,
+  .text-fire-glow {
+    text-shadow: none !important;
+  }
+}

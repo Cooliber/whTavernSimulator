@@ -1,0 +1,43 @@
+[
+  {
+    "id": "a023f4ff-0f48-44e8-8776-dbe8ce83f51a",
+    "agent_id": "Czempion",
+    "memory_type": "interaction",
+    "content": "Responded to scenario: Tension escalates between two groups of patrons. Response: *Slams fist on the bar, eyes scanning the room* \"Enough! No fighting in my tavern! Guards, get in here, now. I'll sort this out.\"",
+    "importance": 2,
+    "timestamp": 1752421524.4335124,
+    "context": {
+      "scenario": "Tension escalates between two groups of patrons",
+      "other_agents": [
+        "Skrytob\u00f3jca"
+      ]
+    },
+    "related_agents": [
+      "Skrytob\u00f3jca"
+    ],
+    "tags": [],
+    "decay_rate": 0.1,
+    "access_count": 5,
+    "last_accessed": 1752423813.691583
+  },
+  {
+    "id": "b05832f4-83c8-4fe7-9724-b0113ef27870",
+    "agent_id": "Czempion",
+    "memory_type": "interaction",
+    "content": "Performance test memory 5 for Czempion",
+    "importance": 2,
+    "timestamp": 1752423813.691472,
+    "context": {
+      "test_id": 5,
+      "agent": "Czempion"
+    },
+    "related_agents": [],
+    "tags": [
+      "performance",
+      "test"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 1,
+    "last_accessed": 1752423813.6915832
+  }
+]

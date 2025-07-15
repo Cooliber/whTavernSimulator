@@ -1,0 +1,22 @@
+[
+  {
+    "id": "914bd39f-438b-476c-b666-f3c29d8646ab",
+    "agent_id": "Kapitan_Stra\u017cy",
+    "memory_type": "interaction",
+    "content": "Performance test memory 2 for Kapitan_Stra\u017cy",
+    "importance": 2,
+    "timestamp": 1752423813.6914475,
+    "context": {
+      "test_id": 2,
+      "agent": "Kapitan_Stra\u017cy"
+    },
+    "related_agents": [],
+    "tags": [
+      "performance",
+      "test"
+    ],
+    "decay_rate": 0.1,
+    "access_count": 1,
+    "last_accessed": 1752423813.6915767
+  }
+]
