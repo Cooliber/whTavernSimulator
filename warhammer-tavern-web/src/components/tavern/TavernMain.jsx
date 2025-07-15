@@ -219,16 +219,7 @@ const TavernMain = () => {
     toast.success(`Zareagowałeś: ${reaction.emoji}`)
   }
 
-  // Generate random event
-  const handleGenerateEvent = async () => {
-    try {
-      await generateEvent()
-      generateAtmosphere()
-      toast.success('Wygenerowano wydarzenie!')
-    } catch (error) {
-      toast.error('Błąd podczas generowania wydarzenia')
-    }
-  }
+
 
   const currentAtmosphere = TavernAtmospheres[tavernAtmosphere]
 

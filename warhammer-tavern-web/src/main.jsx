@@ -82,8 +82,10 @@ class ErrorBoundary extends React.Component {
 // Performance monitoring
 if (process.env.NODE_ENV === 'development') {
   // Enable React DevTools profiler
-  window.__REACT_DEVTOOLS_GLOBAL_HOOK__?.onCommitFiberRoot = (id, root, priorityLevel) => {
-    // Performance monitoring logic
+  if (window.__REACT_DEVTOOLS_GLOBAL_HOOK__) {
+    window.__REACT_DEVTOOLS_GLOBAL_HOOK__.onCommitFiberRoot = (id, root, priorityLevel) => {
+      // Performance monitoring logic
+    }
   }
 }
 
