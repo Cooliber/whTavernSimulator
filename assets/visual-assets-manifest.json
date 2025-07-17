@@ -1,0 +1,225 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2024-01-17",
+  "description": "Visual assets manifest for Warhammer Tavern v3 - tracks all images, icons, and visual resources with optimization metadata",
+  "assets": {
+    "backgrounds": {
+      "tavern-main": {
+        "path": "/assets/images/backgrounds/tavern-main.jpg",
+        "optimized": {
+          "webp": "/assets/images/backgrounds/tavern-main.webp",
+          "avif": "/assets/images/backgrounds/tavern-main.avif"
+        },
+        "sizes": {
+          "mobile": "/assets/images/backgrounds/tavern-main-mobile.jpg",
+          "tablet": "/assets/images/backgrounds/tavern-main-tablet.jpg",
+          "desktop": "/assets/images/backgrounds/tavern-main-desktop.jpg"
+        },
+        "metadata": {
+          "originalSize": "2.1MB",
+          "optimizedSize": "450KB",
+          "dimensions": "1920x1080",
+          "aspectRatio": "16:9",
+          "priority": "high",
+          "lazy": false
+        }
+      },
+      "parchment-texture": {
+        "path": "/assets/images/textures/parchment.jpg",
+        "optimized": {
+          "webp": "/assets/images/textures/parchment.webp"
+        },
+        "metadata": {
+          "originalSize": "800KB",
+          "optimizedSize": "120KB",
+          "dimensions": "1024x1024",
+          "aspectRatio": "1:1",
+          "priority": "medium",
+          "lazy": true
+        }
+      },
+      "wood-texture": {
+        "path": "/assets/images/textures/wood.jpg",
+        "optimized": {
+          "webp": "/assets/images/textures/wood.webp"
+        },
+        "metadata": {
+          "originalSize": "600KB",
+          "optimizedSize": "90KB",
+          "dimensions": "512x512",
+          "aspectRatio": "1:1",
+          "priority": "low",
+          "lazy": true
+        }
+      }
+    },
+    "characters": {
+      "marcus-brightblade": {
+        "path": "/assets/images/characters/marcus-brightblade.jpg",
+        "optimized": {
+          "webp": "/assets/images/characters/marcus-brightblade.webp",
+          "avif": "/assets/images/characters/marcus-brightblade.avif"
+        },
+        "sizes": {
+          "thumbnail": "/assets/images/characters/marcus-brightblade-thumb.jpg",
+          "medium": "/assets/images/characters/marcus-brightblade-medium.jpg",
+          "large": "/assets/images/characters/marcus-brightblade-large.jpg"
+        },
+        "metadata": {
+          "originalSize": "1.5MB",
+          "optimizedSize": "320KB",
+          "dimensions": "800x1200",
+          "aspectRatio": "2:3",
+          "priority": "high",
+          "lazy": false,
+          "faction": "empire"
+        }
+      },
+      "elena-shadowweaver": {
+        "path": "/assets/images/characters/elena-shadowweaver.jpg",
+        "optimized": {
+          "webp": "/assets/images/characters/elena-shadowweaver.webp"
+        },
+        "metadata": {
+          "originalSize": "1.2MB",
+          "optimizedSize": "280KB",
+          "dimensions": "800x1200",
+          "aspectRatio": "2:3",
+          "priority": "medium",
+          "lazy": true,
+          "faction": "chaos"
+        }
+      }
+    },
+    "icons": {
+      "faction-empire": {
+        "path": "/assets/images/icons/empire.svg",
+        "metadata": {
+          "originalSize": "5KB",
+          "optimizedSize": "3KB",
+          "dimensions": "64x64",
+          "aspectRatio": "1:1",
+          "priority": "high",
+          "lazy": false,
+          "format": "svg"
+        }
+      },
+      "faction-chaos": {
+        "path": "/assets/images/icons/chaos.svg",
+        "metadata": {
+          "originalSize": "6KB",
+          "optimizedSize": "4KB",
+          "dimensions": "64x64",
+          "aspectRatio": "1:1",
+          "priority": "high",
+          "lazy": false,
+          "format": "svg"
+        }
+      },
+      "dice": {
+        "path": "/assets/images/icons/dice.svg",
+        "metadata": {
+          "originalSize": "3KB",
+          "optimizedSize": "2KB",
+          "dimensions": "32x32",
+          "aspectRatio": "1:1",
+          "priority": "medium",
+          "lazy": true,
+          "format": "svg"
+        }
+      }
+    },
+    "ui-elements": {
+      "button-border": {
+        "path": "/assets/images/ui/button-border.png",
+        "optimized": {
+          "webp": "/assets/images/ui/button-border.webp"
+        },
+        "metadata": {
+          "originalSize": "15KB",
+          "optimizedSize": "8KB",
+          "dimensions": "200x50",
+          "aspectRatio": "4:1",
+          "priority": "medium",
+          "lazy": true
+        }
+      },
+      "scroll-decoration": {
+        "path": "/assets/images/ui/scroll-decoration.svg",
+        "metadata": {
+          "originalSize": "4KB",
+          "optimizedSize": "3KB",
+          "dimensions": "100x20",
+          "aspectRatio": "5:1",
+          "priority": "low",
+          "lazy": true,
+          "format": "svg"
+        }
+      }
+    }
+  },
+  "optimization": {
+    "formats": {
+      "primary": "avif",
+      "fallback": "webp",
+      "legacy": "jpg"
+    },
+    "quality": {
+      "high": 90,
+      "medium": 80,
+      "low": 70
+    },
+    "sizes": {
+      "mobile": {
+        "maxWidth": 768,
+        "quality": "medium"
+      },
+      "tablet": {
+        "maxWidth": 1024,
+        "quality": "high"
+      },
+      "desktop": {
+        "maxWidth": 1920,
+        "quality": "high"
+      }
+    },
+    "lazy-loading": {
+      "threshold": "0.1",
+      "rootMargin": "50px"
+    }
+  },
+  "performance": {
+    "critical-assets": [
+      "tavern-main",
+      "marcus-brightblade",
+      "faction-empire",
+      "faction-chaos"
+    ],
+    "preload-assets": [
+      "tavern-main",
+      "marcus-brightblade"
+    ],
+    "total-size": {
+      "original": "8.2MB",
+      "optimized": "1.8MB",
+      "compression-ratio": "78%"
+    },
+    "load-targets": {
+      "first-contentful-paint": "1.5s",
+      "largest-contentful-paint": "2.5s",
+      "cumulative-layout-shift": "0.1"
+    }
+  },
+  "accessibility": {
+    "alt-text-required": true,
+    "high-contrast-support": true,
+    "reduced-motion-support": true,
+    "screen-reader-friendly": true
+  },
+  "cdn": {
+    "enabled": false,
+    "provider": null,
+    "cache-duration": "1 year",
+    "compression": "gzip, brotli"
+  }
+}

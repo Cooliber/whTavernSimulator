@@ -8,9 +8,49 @@
       </div>
     </div>
 
+    <!-- Quick Actions Bar -->
+    <div class="quick-actions-bar flex items-center justify-between mb-4 p-3 bg-wh-parchment rounded-lg">
+      <div class="flex space-x-2">
+        <RippleButton
+          class="bg-wh-empire-gold text-wh-dark-grey px-3 py-1 text-sm"
+          @click="generateRandomNPC"
+        >
+          <Icon name="shuffle" class="w-4 h-4 mr-1" />
+          Quick Generate
+        </RippleButton>
+        <ShimmerButton
+          class="bg-wh-chaos-red text-white px-3 py-1 text-sm"
+          @click="openAIPersonalityBuilder"
+        >
+          <Icon name="brain" class="w-4 h-4 mr-1" />
+          AI Builder
+        </ShimmerButton>
+      </div>
+      <div class="flex items-center space-x-2">
+        <span class="text-xs text-wh-dark-grey">Auto-save:</span>
+        <input type="checkbox" v-model="autoSave" class="wh-checkbox" />
+      </div>
+    </div>
+
     <!-- NPC Creation Panel -->
     <div class="creation-panel wh-ornate-border p-4 space-y-4">
-      <h4 class="wh-subtitle text-lg text-wh-dark-grey">Create New NPC</h4>
+      <div class="flex items-center justify-between">
+        <h4 class="wh-subtitle text-lg text-wh-dark-grey">Create New NPC</h4>
+        <div class="flex space-x-2">
+          <button
+            class="text-xs text-wh-empire-gold hover:text-wh-empire-gold-dark"
+            @click="loadTemplate"
+          >
+            Load Template
+          </button>
+          <button
+            class="text-xs text-wh-empire-gold hover:text-wh-empire-gold-dark"
+            @click="saveAsTemplate"
+          >
+            Save Template
+          </button>
+        </div>
+      </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <!-- Basic Info -->

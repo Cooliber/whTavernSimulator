@@ -43,13 +43,19 @@
     --ring: 255 215 0; /* Bright gold focus ring */
     --radius: 0.75rem; /* Slightly more rounded for softer feel */
     
-    /* Faction-specific CSS Variables */
-    --faction-empire: 255 215 0;
-    --faction-chaos: 139 0 0;
-    --faction-elves: 34 139 34;
-    --faction-dwarfs: 184 134 11;
-    --faction-undead: 75 0 130;
-    --faction-orcs: 85 107 47;    
+    /* Enhanced Faction Color Palette - Artistic Interpretation */
+    --faction-empire: 255 215 0; /* Imperial gold - unchanged for consistency */
+    --faction-empire-secondary: 184 134 11; /* Darker gold for depth */
+    --faction-chaos: 183 28 28; /* Enhanced chaos red for better visibility */
+    --faction-chaos-secondary: 139 0 0; /* Deep blood red */
+    --faction-elves: 46 160 67; /* Brighter forest green */
+    --faction-elves-secondary: 34 139 34; /* Deep forest */
+    --faction-dwarfs: 205 164 92; /* Warmer gold-bronze */
+    --faction-dwarfs-secondary: 160 82 45; /* Rich copper */
+    --faction-undead: 138 43 226; /* Brighter purple for visibility */
+    --faction-undead-secondary: 75 0 130; /* Deep mystical purple */
+    --faction-orcs: 107 142 35; /* Brighter war green */
+    --faction-orcs-secondary: 85 107 47; /* Dark olive */
     /* Animation Variables */
     --animation-duration: 0.3s;
     --animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
@@ -62,58 +68,214 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
-    background-image: 
-      radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(255, 69, 0, 0.05) 0%, transparent 50%),
-      linear-gradient(135deg, rgb(47, 25, 16) 0%, rgb(26, 15, 10) 100%);
+    /* Enhanced atmospheric background - Renaissance-inspired layering */
+    background-image:
+      /* Candlelight glow effects - da Vinci's chiaroscuro technique */
+      radial-gradient(circle at 15% 85%, rgba(255, 215, 0, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 85% 15%, rgba(255, 87, 34, 0.06) 0%, transparent 45%),
+      radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.03) 0%, transparent 60%),
+      /* Fireplace warmth - Picasso's warm color harmony */
+      radial-gradient(ellipse at 10% 90%, rgba(255, 87, 34, 0.04) 0%, transparent 50%),
+      radial-gradient(ellipse at 90% 10%, rgba(160, 82, 45, 0.04) 0%, transparent 50%),
+      /* Base gradient with enhanced depth */
+      linear-gradient(135deg, rgb(28, 18, 12) 0%, rgb(22, 15, 10) 50%, rgb(18, 12, 8) 100%);
     background-attachment: fixed;
+    background-size: 100% 100%, 100% 100%, 150% 150%, 80% 80%, 80% 80%, 100% 100%;
+    /* Subtle texture overlay for parchment feel */
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+      /* Subtle paper texture */
+      radial-gradient(circle at 25% 25%, rgba(255, 248, 220, 0.01) 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, rgba(255, 248, 220, 0.01) 1px, transparent 1px);
+    background-size: 50px 50px, 30px 30px;
+    pointer-events: none;
+    z-index: -1;
   }
 }
 
 @layer components {
-  /* Typography Classes */
+  /* Enhanced Typography Classes - Renaissance Typography Mastery */
   .font-medieval {
     font-family: 'Cinzel', serif;
     font-weight: 600;
     letter-spacing: 0.025em;
     font-display: swap;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    line-height: 1.4;
   }
 
   .font-fantasy {
     font-family: 'Uncial Antiqua', cursive;
     font-weight: 400;
     font-display: swap;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    line-height: 1.3;
   }
 
   .font-sharp {
     font-family: 'MedievalSharp', cursive;
     font-weight: 400;
     font-display: swap;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    line-height: 1.35;
   }
 
-  /* Faction Theme Classes - Optimized with CSS Custom Properties */
+  /* Enhanced heading styles with artistic flair */
+  .heading-glow {
+    text-shadow:
+      0 0 10px rgba(255, 215, 0, 0.5),
+      0 0 20px rgba(255, 215, 0, 0.3),
+      0 1px 3px rgba(0, 0, 0, 0.5);
+    animation: subtle-glow 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes subtle-glow {
+    from {
+      text-shadow:
+        0 0 10px rgba(255, 215, 0, 0.5),
+        0 0 20px rgba(255, 215, 0, 0.3),
+        0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+    to {
+      text-shadow:
+        0 0 15px rgba(255, 215, 0, 0.7),
+        0 0 25px rgba(255, 215, 0, 0.4),
+        0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  /* Enhanced Faction Theme Classes - Artistic Renaissance Approach */
   .faction-empire {
-    @apply bg-gradient-to-r text-yellow-900 shadow-gold;
-    background-image: linear-gradient(to right, rgb(var(--faction-empire) / 0.9), rgb(var(--faction-empire) / 0.7));
+    @apply text-yellow-900 shadow-2xl;
+    background: linear-gradient(135deg,
+      rgb(var(--faction-empire) / 0.95) 0%,
+      rgb(var(--faction-empire-secondary) / 0.85) 50%,
+      rgb(var(--faction-empire) / 0.9) 100%);
+    box-shadow:
+      0 4px 20px rgba(255, 215, 0, 0.3),
+      inset 0 1px 0 rgba(255, 248, 220, 0.2);
     transition: all var(--animation-duration) var(--animation-easing);
+    position: relative;
+    overflow: hidden;
   }
 
   .faction-chaos {
-    @apply bg-gradient-to-r text-red-100 shadow-lg;
-    background-image: linear-gradient(to right, rgb(var(--faction-chaos) / 0.9), rgb(var(--faction-chaos) / 0.7));
+    @apply text-red-100 shadow-2xl;
+    background: linear-gradient(135deg,
+      rgb(var(--faction-chaos) / 0.95) 0%,
+      rgb(var(--faction-chaos-secondary) / 0.85) 50%,
+      rgb(var(--faction-chaos) / 0.9) 100%);
+    box-shadow:
+      0 4px 20px rgba(183, 28, 28, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
     transition: all var(--animation-duration) var(--animation-easing);
+    position: relative;
+    overflow: hidden;
   }
 
   .faction-elves {
-    @apply bg-gradient-to-r text-green-100 shadow-lg;
-    background-image: linear-gradient(to right, rgb(var(--faction-elves) / 0.9), rgb(var(--faction-elves) / 0.7));
+    @apply text-green-100 shadow-2xl;
+    background: linear-gradient(135deg,
+      rgb(var(--faction-elves) / 0.95) 0%,
+      rgb(var(--faction-elves-secondary) / 0.85) 50%,
+      rgb(var(--faction-elves) / 0.9) 100%);
+    box-shadow:
+      0 4px 20px rgba(46, 160, 67, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
     transition: all var(--animation-duration) var(--animation-easing);
+    position: relative;
+    overflow: hidden;
   }
 
   .faction-dwarfs {
-    @apply bg-gradient-to-r text-amber-100 shadow-lg;
-    background-image: linear-gradient(to right, rgb(var(--faction-dwarfs) / 0.9), rgb(var(--faction-dwarfs) / 0.7));
+    @apply text-amber-100 shadow-2xl;
+    background: linear-gradient(135deg,
+      rgb(var(--faction-dwarfs) / 0.95) 0%,
+      rgb(var(--faction-dwarfs-secondary) / 0.85) 50%,
+      rgb(var(--faction-dwarfs) / 0.9) 100%);
+    box-shadow:
+      0 4px 20px rgba(205, 164, 92, 0.3),
+      inset 0 1px 0 rgba(255, 248, 220, 0.2);
     transition: all var(--animation-duration) var(--animation-easing);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .faction-undead {
+    @apply text-purple-100 shadow-2xl;
+    background: linear-gradient(135deg,
+      rgb(var(--faction-undead) / 0.95) 0%,
+      rgb(var(--faction-undead-secondary) / 0.85) 50%,
+      rgb(var(--faction-undead) / 0.9) 100%);
+    box-shadow:
+      0 4px 20px rgba(138, 43, 226, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all var(--animation-duration) var(--animation-easing);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .faction-orcs {
+    @apply text-green-100 shadow-2xl;
+    background: linear-gradient(135deg,
+      rgb(var(--faction-orcs) / 0.95) 0%,
+      rgb(var(--faction-orcs-secondary) / 0.85) 50%,
+      rgb(var(--faction-orcs) / 0.9) 100%);
+    box-shadow:
+      0 4px 20px rgba(107, 142, 35, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    transition: all var(--animation-duration) var(--animation-easing);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Artistic Hover Effects - Inspired by Interactive Renaissance Art */
+  .faction-empire:hover,
+  .faction-chaos:hover,
+  .faction-elves:hover,
+  .faction-dwarfs:hover,
+  .faction-undead:hover,
+  .faction-orcs:hover {
+    transform: translateY(-2px) scale(1.02);
+    filter: brightness(1.1) saturate(1.1);
+  }
+
+  /* Subtle shimmer effect for interactive elements */
+  .faction-empire::before,
+  .faction-chaos::before,
+  .faction-elves::before,
+  .faction-dwarfs::before,
+  .faction-undead::before,
+  .faction-orcs::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 100%);
+    transition: left 0.6s ease;
+  }
+
+  .faction-empire:hover::before,
+  .faction-chaos:hover::before,
+  .faction-elves:hover::before,
+  .faction-dwarfs:hover::before,
+  .faction-undead:hover::before,
+  .faction-orcs:hover::before {
+    left: 100%;
   }
 
   .faction-undead {
@@ -207,6 +369,61 @@
     }
   }
 
+  /* Enhanced Card Styles - Artistic Depth and Dimension */
+  .card-enhanced {
+    @apply bg-card border border-border rounded-xl p-6;
+    background: linear-gradient(145deg,
+      rgb(var(--card)) 0%,
+      rgb(var(--card) / 0.8) 100%);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      0 2px 8px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 248, 220, 0.1);
+    backdrop-filter: blur(8px);
+    transition: all var(--animation-duration) var(--animation-easing);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-enhanced:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 12px 40px rgba(0, 0, 0, 0.4),
+      0 4px 12px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 248, 220, 0.15);
+  }
+
+  /* Enhanced Button Styles - Interactive Renaissance Elements */
+  .btn-enhanced {
+    @apply px-6 py-3 rounded-lg font-medieval font-semibold;
+    background: linear-gradient(145deg,
+      rgb(var(--primary)) 0%,
+      rgb(var(--primary) / 0.9) 100%);
+    color: rgb(var(--primary-foreground));
+    box-shadow:
+      0 4px 16px rgba(255, 215, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all var(--animation-duration) var(--animation-easing);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+  }
+
+  .btn-enhanced:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 6px 20px rgba(255, 215, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    filter: brightness(1.1);
+  }
+
+  .btn-enhanced:active {
+    transform: translateY(0);
+    box-shadow:
+      0 2px 8px rgba(255, 215, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
   /* Print Styles */
   @media print {
     .tavern-atmosphere,
@@ -225,6 +442,27 @@
       background: none !important;
       color: black !important;
       border: 1px solid black;
+    }
+  }
+
+  /* Responsive Design Enhancements */
+  @media (max-width: 768px) {
+    .font-medieval,
+    .font-fantasy,
+    .font-sharp {
+      font-size: clamp(16px, 4vw, 24px);
+      line-height: 1.5;
+    }
+
+    .card-enhanced {
+      @apply p-4;
+      box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.2),
+        0 1px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-enhanced {
+      @apply px-4 py-2 text-sm;
     }
   }
 }

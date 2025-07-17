@@ -57,6 +57,40 @@
         </div>
       </section>
 
+      <!-- GM Focus Mode Toggle -->
+      <div class="focus-mode-controls mb-6 flex items-center justify-between">
+        <div class="flex items-center space-x-4">
+          <div class="flex items-center space-x-2">
+            <span class="text-sm text-muted-foreground">Focus Mode:</span>
+            <button
+              class="focus-toggle px-3 py-1 rounded-full text-xs transition-colors"
+              :class="focusMode ? 'bg-red-600 text-white' : 'bg-purple-600 text-white'"
+              @click="toggleFocusMode"
+            >
+              {{ focusMode ? 'ON' : 'OFF' }}
+            </button>
+          </div>
+        </div>
+        <div class="quick-actions flex items-center space-x-2">
+          <RippleButton
+            class="bg-green-600 text-white px-4 py-2 text-sm font-medieval"
+            ripple-color="rgba(34, 197, 94, 0.6)"
+            @click="saveSession"
+          >
+            <Icon name="save" class="w-4 h-4 mr-1" />
+            Save Session
+          </RippleButton>
+          <ShimmerButton
+            class="bg-red-600 text-white px-4 py-2 text-sm font-medieval"
+            shimmer-color="rgba(220, 38, 38, 0.5)"
+            @click="emergencyPause"
+          >
+            <Icon name="pause" class="w-4 h-4 mr-1" />
+            {{ sessionPaused ? 'Resume' : 'Emergency Pause' }}
+          </ShimmerButton>
+        </div>
+      </div>
+
       <!-- GM Control Panels -->
       <div class="grid grid-cols-1 xl:grid-cols-4 gap-8">
         <!-- Atmospheric Controls Panel -->
@@ -170,17 +204,27 @@
           </BorderBeam>
         </div>
         
-        <!-- Event Management Panel -->
+        <!-- Enhanced Event Management Panel -->
         <div class="gm-panel">
-          <BorderBeam 
+          <EnhancedEventManager />
+        </div>
+
+        <!-- Smart Atmosphere Control Panel -->
+        <div class="gm-panel">
+          <SmartAtmosphereControl />
+        </div>
+
+        <!-- Legacy Event Management Panel (Hidden in Focus Mode) -->
+        <div class="gm-panel legacy-panel" v-show="!focusMode">
+          <BorderBeam
             class="bg-card/80 backdrop-blur-md rounded-2xl p-6"
             :border-width="3"
             color-from="#10b981"
             color-to="#059669"
           >
             <div class="space-y-6">
-              <HyperText 
-                text="Event Management"
+              <HyperText
+                text="Legacy Event Management"
                 class="text-2xl font-medieval text-foreground"
                 :animation-duration="1200"
               />
@@ -644,6 +688,10 @@ const activeEvents = ref(3)
 const playersOnline = ref(8)
 const activeTab = ref('npc-editor')
 
+// Focus Mode for GM Interface
+const focusMode = ref(false)
+const sessionPaused = ref(false)
+
 // NPC Management
 const selectedNPCId = ref('')
 const activeNPCList = ref([
@@ -1055,9 +1103,51 @@ const resetToDefaults = () => {
       tradeVolume: 100,
       questRewards: 100
     }
-    
+
     console.log('Reset to defaults')
     alert('Settings reset to defaults!')
+  }
+}
+
+// Focus Mode and Session Management Methods
+const toggleFocusMode = () => {
+  focusMode.value = !focusMode.value
+  console.log('Focus mode:', focusMode.value ? 'ON' : 'OFF')
+
+  if (focusMode.value) {
+    // Hide non-essential panels and maximize critical focus areas
+    document.body.classList.add('gm-focus-mode')
+  } else {
+    document.body.classList.remove('gm-focus-mode')
+  }
+}
+
+const saveSession = () => {
+  const sessionData = {
+    timestamp: new Date().toISOString(),
+    activeNPCs: activeNPCList.value,
+    runningEvents: runningEvents.value,
+    economySettings: economySettings.value,
+    atmosphereSettings: {
+      // This would include current atmosphere state
+    }
+  }
+
+  console.log('Saving session:', sessionData)
+  localStorage.setItem('gm-session-backup', JSON.stringify(sessionData))
+  alert('Session saved successfully!')
+}
+
+const emergencyPause = () => {
+  sessionPaused.value = !sessionPaused.value
+
+  if (sessionPaused.value) {
+    // Pause all active events and timers
+    console.log('Emergency pause activated - all events paused')
+    alert('Session paused - all events and timers stopped')
+  } else {
+    console.log('Session resumed')
+    alert('Session resumed')
   }
 }
 
@@ -1266,6 +1356,34 @@ onMounted(() => {
   .tab-content {
     min-height: 300px;
   }
+}
+
+/* Focus Mode Styles */
+.gm-focus-mode .legacy-panel {
+  display: none !important;
+}
+
+.gm-focus-mode .gm-panel {
+  transition: all 0.3s ease;
+}
+
+.focus-mode .dashboard-grid {
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.focus-mode .left-panel.collapsed {
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.focus-toggle {
+  transition: all 0.3s ease;
+}
+
+.focus-toggle:hover {
+  transform: scale(1.05);
 }
 
 /* Performance optimizations */

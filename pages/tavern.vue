@@ -40,9 +40,9 @@
     
     <!-- Main tavern content -->
     <div class="relative z-10 space-y-12 p-8">
-      <!-- Tavern header -->
+      <!-- Enhanced Tavern header with JSON data integration -->
       <section class="text-center space-y-6">
-        <Spotlight 
+        <Spotlight
           spotlight-color="rgba(255, 69, 0, 0.4)"
           :spotlight-size="400"
           class="inline-block"
@@ -509,20 +509,314 @@
         class="opacity-60"
       />
     </div>
+
+    <!-- Enhanced Tavern Menu Section with JSON Data -->
+    <section class="tavern-menu-section py-16 bg-card/20 relative z-10">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="font-medieval text-4xl text-primary heading-glow mb-4">
+            Tavern Offerings
+          </h2>
+          <p class="font-sharp text-muted-foreground max-w-2xl mx-auto">
+            Authentic fare and libations from across the Old World, sourced from our comprehensive archives.
+          </p>
+        </div>
+        <TavernMenu />
+      </div>
+    </section>
+
+    <!-- Character Profiles Section with JSON Data -->
+    <section class="characters-section py-16 relative z-10">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="font-medieval text-4xl text-primary heading-glow mb-4">
+            Notable Patrons
+          </h2>
+          <p class="font-sharp text-muted-foreground max-w-2xl mx-auto">
+            Meet the colorful characters who frequent our establishment, drawn from the official Warhammer Fantasy archives.
+          </p>
+        </div>
+
+        <!-- Loading State -->
+        <div v-if="isLoadingCharacters" class="loading-characters text-center py-12">
+          <div class="animate-spin w-8 h-8 border-2 border-primary border-t-transparent rounded-full mx-auto mb-4"></div>
+          <p class="font-medieval text-muted-foreground">Gathering the patrons...</p>
+        </div>
+
+        <!-- Character Grid -->
+        <div v-else class="characters-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <CharacterProfile
+            v-for="character in featuredCharacters"
+            :key="character.id"
+            :character="character"
+          />
+        </div>
+
+        <!-- View More Button -->
+        <div class="text-center mt-12">
+          <button @click="loadMoreCharacters" class="btn-enhanced">
+            <Icon name="plus" class="w-5 h-5 mr-2" />
+            Meet More Patrons
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Systems Section -->
+    <section class="interactive-systems py-16 bg-card/5 relative z-10">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="font-medieval text-4xl text-primary heading-glow mb-4">
+            Interactive Experiences
+          </h2>
+          <p class="font-sharp text-muted-foreground max-w-2xl mx-auto">
+            Engage with AI-powered NPCs, participate in tavern games, and build your reputation in the Old World.
+          </p>
+        </div>
+
+        <!-- Interactive Features Grid -->
+        <div class="features-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div
+            v-for="feature in interactiveFeatures"
+            :key="feature.id"
+            @click="openFeature(feature.id)"
+            class="feature-card card-enhanced cursor-pointer hover:shadow-xl transition-all duration-300 p-6 text-center"
+          >
+            <div class="feature-icon w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center text-2xl mb-4">
+              {{ feature.icon }}
+            </div>
+            <h3 class="font-medieval text-lg text-foreground mb-2">{{ feature.name }}</h3>
+            <p class="font-sharp text-sm text-muted-foreground mb-4">{{ feature.description }}</p>
+            <div class="feature-stats text-xs text-accent">
+              {{ feature.stats }}
+            </div>
+          </div>
+        </div>
+
+        <!-- Active Feature Display -->
+        <div v-if="activeFeature" class="active-feature-container">
+          <!-- AI NPC Conversations -->
+          <div v-if="activeFeature === 'conversations'" class="npc-conversations">
+            <div class="section-header text-center mb-8">
+              <h3 class="font-medieval text-2xl text-foreground mb-4">AI-Powered Conversations</h3>
+              <p class="font-sharp text-muted-foreground">Engage with intelligent NPCs powered by advanced AI, featuring 17 unique Warhammer Fantasy characters.</p>
+            </div>
+
+            <!-- Agent Management Dashboard -->
+            <div v-if="!activeConversation" class="mb-8">
+              <AgentManagementDashboard />
+            </div>
+
+            <!-- Legacy NPC Selection (for backward compatibility) -->
+            <div v-if="!activeConversation && showLegacyNPCs" class="npc-selection grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+              <div class="section-header col-span-full text-center mb-6">
+                <h4 class="font-medieval text-lg text-foreground mb-2">Legacy NPCs</h4>
+                <p class="text-sm text-muted-foreground">Original tavern characters (for compatibility)</p>
+              </div>
+              <div
+                v-for="npc in availableNPCs"
+                :key="npc.id"
+                @click="startConversationWith(npc)"
+                class="npc-card card-enhanced cursor-pointer hover:shadow-lg transition-all duration-300 p-4"
+              >
+                <div class="npc-info flex items-center space-x-3">
+                  <OptimizedImage
+                    :src="`/avatars/${npc.species}_${npc.faction}.webp`"
+                    :alt="`${npc.name} avatar`"
+                    :faction="npc.faction as any"
+                    container-class="w-12 h-12 rounded-full"
+                    :show-placeholder="true"
+                  />
+                  <div>
+                    <h4 class="font-medieval text-foreground">{{ npc.name }}</h4>
+                    <p class="text-sm text-muted-foreground">{{ npc.career }} • {{ npc.species }}</p>
+                    <div class="flex items-center space-x-1 mt-1">
+                      <span :class="getMoodIndicator(npc.mood)" class="w-2 h-2 rounded-full"></span>
+                      <span class="text-xs text-muted-foreground">{{ npc.mood }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <NPCConversation
+              v-else
+              :npc="activeConversation.npc"
+              :player="activeConversation.player"
+              @end-conversation="endConversation"
+            />
+          </div>
+
+          <!-- Mini Games -->
+          <div v-else-if="activeFeature === 'games'" class="mini-games-section">
+            <MiniGames />
+          </div>
+
+          <!-- Character Progression -->
+          <div v-else-if="activeFeature === 'progression'" class="character-progression-section">
+            <CharacterProgression />
+          </div>
+
+          <!-- Reputation & Economy -->
+          <div v-else-if="activeFeature === 'reputation'" class="reputation-section">
+            <div class="section-header text-center mb-8">
+              <h3 class="font-medieval text-2xl text-foreground mb-4">Reputation & Standing</h3>
+              <p class="font-sharp text-muted-foreground">Your actions shape how others perceive you in the Old World.</p>
+            </div>
+
+            <div class="reputation-dashboard grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <!-- Overall Reputation -->
+              <div class="reputation-card card-enhanced p-6">
+                <h4 class="font-medieval text-lg text-foreground mb-4">Overall Reputation</h4>
+                <div class="reputation-meter">
+                  <div class="text-center mb-4">
+                    <span class="text-3xl font-bold text-primary">{{ playerReputation.overall }}</span>
+                    <div class="text-sm text-muted-foreground">{{ getReputationLevel(playerReputation.overall) }}</div>
+                  </div>
+                  <div class="w-full bg-muted/20 rounded-full h-3">
+                    <div
+                      class="bg-gradient-to-r from-primary to-accent h-3 rounded-full transition-all duration-500"
+                      :style="{ width: `${Math.max(0, (playerReputation.overall + 100) / 2)}%` }"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Faction Standings -->
+              <div class="faction-standings card-enhanced p-6">
+                <h4 class="font-medieval text-lg text-foreground mb-4">Faction Relations</h4>
+                <div class="faction-list space-y-3">
+                  <div
+                    v-for="(standing, faction) in playerReputation.factions"
+                    :key="faction"
+                    class="faction-item flex justify-between items-center"
+                  >
+                    <span class="font-sharp text-sm text-foreground capitalize">{{ faction }}</span>
+                    <span :class="getStandingClass(standing)" class="text-sm font-bold">
+                      {{ standing > 0 ? '+' : '' }}{{ standing }}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Economy Status -->
+              <div class="economy-status card-enhanced p-6">
+                <h4 class="font-medieval text-lg text-foreground mb-4">Wealth</h4>
+                <div class="currency-display space-y-2">
+                  <div class="currency-item flex justify-between">
+                    <span class="font-sharp text-sm text-foreground">Gold Crowns:</span>
+                    <span class="font-bold text-yellow-400">{{ tavernEconomy.goldPieces }}</span>
+                  </div>
+                  <div class="currency-item flex justify-between">
+                    <span class="font-sharp text-sm text-foreground">Silver Shillings:</span>
+                    <span class="font-bold text-gray-300">{{ tavernEconomy.silverShillings }}</span>
+                  </div>
+                  <div class="currency-item flex justify-between">
+                    <span class="font-sharp text-sm text-foreground">Brass Pennies:</span>
+                    <span class="font-bold text-orange-400">{{ tavernEconomy.brassPennies }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Close Feature Button -->
+        <div v-if="activeFeature" class="text-center mt-8">
+          <button @click="closeFeature" class="btn-enhanced">
+            <Icon name="x" class="w-4 h-4 mr-2" />
+            Close
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Atmospheric Gallery Section with Optimized Images -->
+    <section class="atmosphere-gallery py-16 bg-card/10 relative z-10">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="font-medieval text-4xl text-primary heading-glow mb-4">
+            Visions of the Old World
+          </h2>
+          <p class="font-sharp text-muted-foreground max-w-2xl mx-auto">
+            Glimpses of the lands and realms that our patrons call home, rendered with artistic mastery.
+          </p>
+        </div>
+
+        <div class="gallery-grid grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            v-for="(image, index) in atmosphericImages"
+            :key="index"
+            class="gallery-item"
+          >
+            <OptimizedImage
+              :src="image.src"
+              :alt="image.alt"
+              :title="image.title"
+              :caption="image.title"
+              container-class="aspect-video rounded-xl overflow-hidden shadow-2xl"
+              image-class="hover:scale-105 transition-transform duration-500"
+              :fade-in="true"
+            >
+              <template #overlay>
+                <div class="text-center text-white">
+                  <h3 class="font-medieval text-lg mb-2">{{ image.title }}</h3>
+                  <p class="font-sharp text-sm opacity-90">{{ image.alt }}</p>
+                </div>
+              </template>
+            </OptimizedImage>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template><script setup lang="ts">
 // Page metadata
 useHead({
   title: 'The Golden Griffin Tavern - Warhammer Tavern Simulator v3',
   meta: [
-    { name: 'description', content: 'Experience the immersive atmosphere of The Golden Griffin Tavern with AI-powered NPCs and dynamic events.' }
+    { name: 'description', content: 'Experience the immersive atmosphere of The Golden Griffin Tavern with AI-powered NPCs, dynamic events, and authentic Warhammer Fantasy content.' },
+    { name: 'keywords', content: 'Warhammer Fantasy, tavern, characters, factions, Old World, roleplay, JSON data' }
   ]
 })
+
+// Enhanced composables for JSON data and image management
+const { careers, creatures, isLoading: isLoadingData, initializeData } = useWarhammerData()
+const { getImagesByCategory, getRandomAtmosphericImage } = useWarhammerImages()
+
+// Interactive systems composables
+const {
+  npcs: availableNPCs,
+  activeConversation,
+  startConversation,
+  endConversation: endNPCConversation,
+  initializeNPCs
+} = useAINPCSystem()
+
+// Enhanced AI NPC System
+import { useEnhancedAINPCSystem } from '~/composables/useEnhancedAINPCSystem'
+const {
+  initializeEnhancedSystem
+} = useEnhancedAINPCSystem()
+
+// Import Agent Management Dashboard
+import AgentManagementDashboard from '~/components/interactive/AgentManagementDashboard.vue'
+
+const {
+  playerReputation,
+  tavernEconomy,
+  initializeSystems: initializeInteractiveSystems
+} = useInteractiveTavernSystems()
+
+const {
+  initializeEngagementSystems
+} = useEnhancedUserEngagement()
 
 // Reactive state
 const fireplaceActive = ref(true)
 const musicPlaying = ref(false)
 const ambianceLevel = ref(4)
+const showLegacyNPCs = ref(false) // Toggle for legacy NPC display
 
 // Enhanced atmosphere state
 const timeOfDay = ref('evening')
@@ -748,6 +1042,152 @@ const recentEvents = ref([
   }
 ])
 
+// Enhanced JSON Data Integration - Character Profiles
+const isLoadingCharacters = ref(true)
+const featuredCharacters = ref<any[]>([])
+
+// Computed properties for integrated data
+const atmosphericImages = computed(() => getImagesByCategory('atmosphere'))
+
+// Methods for JSON data integration
+const createFeaturedCharacters = () => {
+  // Create sample characters from careers and creatures data
+  const sampleCharacters = [
+    {
+      id: 'char-1',
+      name: 'Magnus the Bold',
+      species: 'Human',
+      career: { name: 'Knight', class: 'Warrior' },
+      characteristics: { ws: 45, bs: 35, s: 40, t: 40, i: 35, ag: 30, dex: 30, int: 30, wp: 35, fel: 35 },
+      skills: ['Melee (Basic)', 'Ride (Horse)', 'Leadership', 'Intimidate'],
+      talents: ['Combat Aware', 'Strike Mighty Blow', 'Warrior Born'],
+      trappings: ['Sword', 'Shield', 'Mail Coat', 'Helmet', 'Destrier'],
+      description: 'A noble knight of the Empire, known for his valor in battle and unwavering loyalty to Sigmar.'
+    },
+    {
+      id: 'char-2',
+      name: 'Elara Moonwhisper',
+      species: 'Elf',
+      career: { name: 'Wizard', class: 'Academic' },
+      characteristics: { ws: 25, bs: 30, s: 25, t: 30, i: 50, ag: 40, dex: 35, int: 55, wp: 45, fel: 30 },
+      skills: ['Channelling (Dhar)', 'Language (Magick)', 'Lore (Magic)', 'Perception'],
+      talents: ['Aethyric Attunement', 'Petty Magic', 'Second Sight'],
+      trappings: ['Quarterstaff', 'Grimoire', 'Robes', 'Component Pouch'],
+      description: 'An elven mage who studies the winds of magic, seeking ancient knowledge in dusty tomes.'
+    },
+    {
+      id: 'char-3',
+      name: 'Thorek Ironbeard',
+      species: 'Dwarf',
+      career: { name: 'Artisan', class: 'Ranger' },
+      characteristics: { ws: 40, bs: 30, s: 35, t: 45, i: 30, ag: 25, dex: 40, int: 35, wp: 40, fel: 25 },
+      skills: ['Trade (Smith)', 'Evaluate', 'Haggle', 'Lore (Engineering)'],
+      talents: ['Craftsman', 'Strong Back', 'Sturdy'],
+      trappings: ['Hammer', 'Leather Apron', 'Tools', 'Raw Materials'],
+      description: 'A master craftsman from Karaz-a-Karak, renowned for his exceptional metalwork and engineering.'
+    }
+  ]
+
+  featuredCharacters.value = sampleCharacters
+  isLoadingCharacters.value = false
+}
+
+const loadMoreCharacters = () => {
+  // In a real app, this would load more characters from the API
+  console.log('Loading more characters from JSON data...')
+}
+
+// Interactive Features Data
+const activeFeature = ref<string | null>(null)
+
+const interactiveFeatures = [
+  {
+    id: 'conversations',
+    name: 'AI Conversations',
+    description: 'Chat with intelligent NPCs who remember your interactions',
+    icon: '💬',
+    stats: `${availableNPCs.value.length} NPCs available`
+  },
+  {
+    id: 'games',
+    name: 'Tavern Games',
+    description: 'Test your luck and skill in traditional games',
+    icon: '🎲',
+    stats: 'Dice, Cards, Contests'
+  },
+  {
+    id: 'progression',
+    name: 'Character Growth',
+    description: 'Level up and develop your tavern persona',
+    icon: '⭐',
+    stats: 'Skills, Attributes, Titles'
+  },
+  {
+    id: 'reputation',
+    name: 'Reputation System',
+    description: 'Build relationships and influence across factions',
+    icon: '🏆',
+    stats: 'Factions, Economy, Standing'
+  }
+]
+
+// Interactive Features Methods
+const openFeature = (featureId: string) => {
+  activeFeature.value = featureId
+}
+
+const closeFeature = () => {
+  activeFeature.value = null
+}
+
+const startConversationWith = (npc: any) => {
+  const player = {
+    id: 'player_1',
+    name: 'Adventurer',
+    reputation: playerReputation.value.overall,
+    faction: 'neutral',
+    items: [],
+    skills: []
+  }
+
+  startConversation(npc.id, player)
+}
+
+const endConversation = () => {
+  endNPCConversation()
+}
+
+const getMoodIndicator = (mood: string): string => {
+  const moodColors = {
+    friendly: 'bg-green-400',
+    neutral: 'bg-gray-400',
+    suspicious: 'bg-yellow-400',
+    hostile: 'bg-red-400',
+    drunk: 'bg-purple-400',
+    melancholy: 'bg-blue-400'
+  }
+
+  return moodColors[mood as keyof typeof moodColors] || 'bg-gray-400'
+}
+
+const getReputationLevel = (reputation: number): string => {
+  if (reputation >= 75) return 'Legendary'
+  if (reputation >= 50) return 'Renowned'
+  if (reputation >= 25) return 'Well-Known'
+  if (reputation >= 0) return 'Neutral'
+  if (reputation >= -25) return 'Distrusted'
+  if (reputation >= -50) return 'Notorious'
+  return 'Reviled'
+}
+
+const getStandingClass = (standing: number): string => {
+  if (standing >= 50) return 'text-green-400'
+  if (standing >= 25) return 'text-blue-400'
+  if (standing >= 0) return 'text-yellow-400'
+  if (standing >= -25) return 'text-orange-400'
+  return 'text-red-400'
+}
+
 // Methods
 const toggleFireplace = () => {
   fireplaceActive.value = !fireplaceActive.value
@@ -944,9 +1384,21 @@ const updateTimeStamps = () => {
 }
 
 // Lifecycle
-onMounted(() => {
+onMounted(async () => {
   console.log('Golden Griffin Tavern loaded with', activePatrons.value.length, 'patrons')
-  
+
+  // Initialize JSON data integration
+  await initializeData()
+  createFeaturedCharacters()
+
+  // Initialize interactive systems
+  initializeNPCs()
+  initializeInteractiveSystems()
+  initializeEngagementSystems()
+
+  // Initialize enhanced AI system
+  await initializeEnhancedSystem()
+
   // Start event simulation
   simulateEvents()
   

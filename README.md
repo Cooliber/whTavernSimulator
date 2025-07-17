@@ -19,12 +19,54 @@ Welcome to the most immersive Warhammer Fantasy tavern experience ever created! 
 - **Faction-Based Theming** for Empire, Chaos, Elves, Dwarfs, and more
 - **Medieval Typography** with custom fonts (Cinzel, Uncial Antiqua, MedievalSharp)
 
+#### 🎮 **Advanced Game Master Tools**
+- **Enhanced NPC Management**: AI-powered quick generation, personality editor, template system
+- **Smart Event Management**: Timeline visualization, AI suggestions, progress tracking
+- **Atmosphere Control**: Real-time lighting, weather, and audio controls with presets
+- **Focus Mode**: Streamlined interface for critical gaming moments
+- **Real-time Collaboration**: Multi-GM support with WebSocket integration
+- **Session Management**: Auto-save, emergency pause, and state restoration
+
 #### 🚀 **Modern Tech Stack**
 - **Nuxt.js v3** with Vue 3 Composition API
 - **TypeScript** for type safety
 - **TailwindCSS** with custom Warhammer color system
 - **Pinia** for state management
 - **Google Fonts** integration
+
+### 🎮 Game Master Features
+
+#### **Enhanced NPC Management**
+- **AI-Powered Generation**: One-click random NPC creation with personality traits
+- **Advanced Personality Editor**: Granular control over NPC traits with visual sliders
+- **Template System**: Save and load NPC templates for consistent character types
+- **Auto-save Functionality**: Prevent data loss during intense gaming sessions
+- **Quick Actions**: Instant NPC spawning, behavior editing, and template management
+
+#### **Smart Event Management**
+- **AI Event Suggestions**: Context-aware event recommendations based on current tavern state
+- **Timeline Visualization**: Visual timeline showing event progression and scheduling
+- **Event Templates Library**: Pre-built events for common scenarios (merchant arrivals, brawls, weather)
+- **Progress Tracking**: Real-time event progress with visual indicators
+- **Trigger System**: Quick-action buttons for immediate event responses
+
+#### **Advanced Atmosphere Control**
+- **Preset System**: 8 atmospheric presets (Cozy Evening, Stormy Night, Festival, etc.)
+- **Real-time Controls**: Live adjustment of lighting, weather, and audio
+- **Atmosphere Timeline**: Plan and execute atmospheric sequences
+- **Quick Actions**: Dramatic moment triggers, tension builders, mystery additions
+
+#### **Focus Mode & Session Management**
+- **Focus Mode Toggle**: Hide non-essential panels during critical moments
+- **Emergency Pause**: Instantly pause all events and timers
+- **Session Backup**: Automatic session state saving and restoration
+- **Responsive Design**: Optimized for different screen sizes and devices
+
+#### **Real-time Collaboration**
+- **Multi-GM Support**: WebSocket-based real-time collaboration
+- **Conflict Resolution**: Automatic handling of simultaneous changes
+- **Action Broadcasting**: Share NPC updates, events, and atmosphere changes
+- **Connection Management**: Automatic reconnection and offline queue
 
 ### 🎯 Inspira UI Components Implemented
 
@@ -104,6 +146,11 @@ warhammer-tavern-v3/
 │   │   ├── Dock.vue
 │   │   ├── AnimatedTestimonials.vue
 │   │   └── LiquidBackground.vue
+│   ├── gm/                       # Game Master components
+│   │   ├── NPCManager.vue        # Enhanced NPC management
+│   │   ├── EnhancedEventManager.vue  # Smart event system
+│   │   ├── SmartAtmosphereControl.vue # Advanced atmosphere controls
+│   │   └── AtmosphericControls.vue   # Legacy atmosphere controls
 │   └── ui/
 │       └── Icon.vue              # Custom icon component
 ├── layouts/
@@ -112,8 +159,14 @@ warhammer-tavern-v3/
 │   ├── index.vue                 # Homepage with character gallery
 │   ├── characters.vue            # Character showcase
 │   ├── tavern.vue               # Main tavern experience
+│   ├── gm-dashboard.vue         # Game Master dashboard
 │   └── conversations/
 │       └── index.vue            # Conversation system
+├── composables/                  # Vue composables
+│   ├── useGMCollaboration.ts    # Real-time GM collaboration
+│   ├── useWarhammerData.ts      # Warhammer data management
+│   ├── useQuestGenerator.ts     # Quest generation system
+│   └── useInteractiveTavernSystems.ts # Tavern systems
 ├── stores/                       # Pinia stores (future)
 ├── nuxt.config.ts               # Nuxt configuration
 ├── tailwind.config.js           # TailwindCSS with Warhammer theme
@@ -305,6 +358,37 @@ Each faction has its own color scheme and styling:
 .faction-chaos { @apply bg-gradient-to-r from-red-900 to-red-700; }
 /* ... more factions */
 ```
+
+### 🎮 Using the GM Dashboard
+
+#### **Getting Started**
+1. Navigate to `/gm-dashboard` to access the Game Master interface
+2. Use the **Focus Mode** toggle to streamline the interface during critical moments
+3. Access **Emergency Pause** to instantly stop all events and timers
+
+#### **NPC Management**
+- **Quick Generate**: Create random NPCs with one click
+- **AI Builder**: Use AI-powered personality generation
+- **Template System**: Save frequently used NPC types
+- **Personality Editor**: Fine-tune NPC traits with visual sliders
+
+#### **Event Management**
+- **AI Suggestions**: Get context-aware event recommendations
+- **Timeline View**: Visualize event progression and scheduling
+- **Quick Actions**: Trigger dramatic moments, build tension, or add mystery
+- **Progress Tracking**: Monitor event completion with visual indicators
+
+#### **Atmosphere Control**
+- **Presets**: Choose from 8 atmospheric presets (Cozy Evening, Stormy Night, etc.)
+- **Real-time Controls**: Adjust lighting, weather, and audio on the fly
+- **Timeline Sequences**: Plan and execute atmospheric changes
+- **Quick Actions**: Instant dramatic effects and mood changes
+
+#### **Collaboration Features**
+- **Multi-GM Support**: Multiple Game Masters can collaborate in real-time
+- **Action Broadcasting**: Share NPC updates and events across sessions
+- **Conflict Resolution**: Automatic handling of simultaneous changes
+- **Session Management**: Save and restore complete session states
 
 ### 🚀 Future Enhancements
 

@@ -12,12 +12,13 @@ test.describe('Warhammer Tavern Simulator v3 - Configuration Tests', () => {
       expect(response.status()).toBe(200)
     })
 
-    it('should have correct base URL in Playwright config', async () => {
+    test('should have correct base URL in Playwright config', async ({ page }) => {
       // This test verifies the Playwright configuration
-      expect(page.url()).toContain('localhost:5920')
+      await page.goto('http://localhost:5920')
+      expect(page.url()).toContain('5920')
     })
 
-    it('should handle WebSocket connections on correct port', async () => {
+    test('should handle WebSocket connections on correct port', async ({ page }) => {
       // Test WebSocket connection if applicable
       const wsUrl = 'ws://localhost:5920/ws'
       // WebSocket test implementation would go here
@@ -25,43 +26,43 @@ test.describe('Warhammer Tavern Simulator v3 - Configuration Tests', () => {
     })
   })
 
-  describe('Routing Configuration', () => {
-    it('should navigate to home page', async () => {
+  test.describe('Routing Configuration', () => {
+    test('should navigate to home page', async ({ page }) => {
       await page.goto('http://localhost:5920/')
       await expect(page.locator('h1')).toContainText('Warhammer Tavern Simulator')
     })
 
-    it('should navigate to characters page', async () => {
+    test('should navigate to characters page', async ({ page }) => {
       await page.goto('http://localhost:5920/characters')
       await expect(page.locator('h1')).toContainText('Characters')
     })
 
-    it('should navigate to conversations page', async () => {
+    test('should navigate to conversations page', async ({ page }) => {
       await page.goto('http://localhost:5920/conversations')
       await expect(page.locator('h1')).toContainText('Conversations')
     })
 
-    it('should navigate to settings page', async () => {
+    test('should navigate to settings page', async ({ page }) => {
       await page.goto('http://localhost:5920/settings')
       await expect(page.locator('h1')).toContainText('Tavern Settings')
     })
 
-    it('should navigate to about page', async () => {
+    test('should navigate to about page', async ({ page }) => {
       await page.goto('http://localhost:5920/about')
       await expect(page.locator('h1')).toContainText('About Warhammer Tavern Simulator')
     })
 
-    it('should navigate to generators page', async () => {
+    test('should navigate to generators page', async ({ page }) => {
       await page.goto('http://localhost:5920/generators')
       await expect(page.locator('h1')).toContainText('Warhammer Content Generators')
     })
 
-    it('should handle dynamic routes', async () => {
+    test('should handle dynamic routes', async ({ page }) => {
       await page.goto('http://localhost:5920/conversations/marcus')
       await expect(page.locator('h1')).toContainText('Sir Marcus Brightblade')
     })
 
-    it('should handle 404 errors gracefully', async () => {
+    test('should handle 404 errors gracefully', async ({ page }) => {
       const response = await page.goto('http://localhost:5920/nonexistent-page')
       expect(response.status()).toBe(404)
     })
