@@ -1,0 +1,182 @@
+/* Inspira UI Components - Warhammer Theme Customizations */
+
+/* Button Variants */
+.inspira-button-empire {
+  @apply bg-gradient-to-r from-yellow-600 to-yellow-400 text-yellow-900 hover:from-yellow-500 hover:to-yellow-300;
+  box-shadow: 0 4px 14px 0 rgba(255, 215, 0, 0.3);
+}
+
+.inspira-button-chaos {
+  @apply bg-gradient-to-r from-red-900 to-red-700 text-red-100 hover:from-red-800 hover:to-red-600;
+  box-shadow: 0 4px 14px 0 rgba(139, 0, 0, 0.4);
+}
+
+.inspira-button-elves {
+  @apply bg-gradient-to-r from-green-700 to-green-500 text-green-100 hover:from-green-600 hover:to-green-400;
+  box-shadow: 0 4px 14px 0 rgba(34, 139, 34, 0.3);
+}
+
+/* Card Variants */
+.inspira-card-character {
+  @apply bg-gradient-to-br from-amber-900/90 to-amber-800/90 backdrop-blur-md border border-amber-700/50;
+  box-shadow: 
+    0 10px 25px -5px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 215, 0, 0.1),
+    inset 0 1px 0 rgba(255, 215, 0, 0.1);
+}
+
+.inspira-card-tavern {
+  @apply bg-gradient-to-br from-stone-800/90 to-stone-900/90 backdrop-blur-md border border-stone-700/50;
+  box-shadow: 
+    0 10px 25px -5px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(139, 69, 19, 0.2),
+    inset 0 1px 0 rgba(245, 245, 220, 0.1);
+}
+
+/* Navigation Dock */
+.inspira-dock-tavern {
+  @apply bg-gradient-to-r from-amber-900/90 to-amber-800/90 backdrop-blur-md border border-amber-700/30;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 215, 0, 0.1),
+    inset 0 1px 0 rgba(255, 215, 0, 0.1);
+}
+
+/* Text Effects */
+.inspira-text-glow-gold {
+  text-shadow: 
+    0 0 5px rgba(255, 215, 0, 0.5),
+    0 0 10px rgba(255, 215, 0, 0.3),
+    0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+.inspira-text-glow-fire {
+  text-shadow: 
+    0 0 5px rgba(255, 69, 0, 0.6),
+    0 0 10px rgba(255, 69, 0, 0.4),
+    0 0 15px rgba(255, 69, 0, 0.2);
+}
+
+/* Background Effects */
+.inspira-bg-aurora-tavern {
+  background: linear-gradient(
+    45deg,
+    rgba(139, 69, 19, 0.1) 0%,
+    rgba(160, 82, 45, 0.1) 25%,
+    rgba(205, 133, 63, 0.1) 50%,
+    rgba(218, 165, 32, 0.1) 75%,
+    rgba(139, 69, 19, 0.1) 100%
+  );
+  animation: aurora-shift 8s ease-in-out infinite;
+}
+
+@keyframes aurora-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Particle Effects */
+.inspira-particles-magic {
+  position: relative;
+  overflow: hidden;
+}
+
+.inspira-particles-magic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, rgba(255, 215, 0, 0.3), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255, 215, 0, 0.2), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(255, 215, 0, 0.4), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255, 215, 0, 0.3), transparent);
+  background-repeat: repeat;
+  background-size: 150px 100px;
+  animation: sparkle 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes sparkle {
+  0% { transform: translateY(0px); opacity: 1; }
+  100% { transform: translateY(-100px); opacity: 0; }
+}
+
+/* Interactive Hover Effects */
+.inspira-hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.inspira-hover-lift:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 
+    0 20px 40px -10px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 215, 0, 0.2);
+}
+
+/* Border Beam Effect */
+.inspira-border-beam {
+  position: relative;
+  overflow: hidden;
+}
+
+.inspira-border-beam::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.8), transparent);
+  animation: beam-slide 2s linear infinite;
+}
+
+@keyframes beam-slide {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Spotlight Effect */
+.inspira-spotlight {
+  position: relative;
+  overflow: hidden;
+}
+
+.inspira-spotlight::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 215, 0, 0.1) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.inspira-spotlight:hover::after {
+  opacity: 1;
+}
+
+/* Morphing Tabs */
+.inspira-tabs-morphing {
+  position: relative;
+  background: rgba(139, 69, 19, 0.2);
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.inspira-tabs-morphing .tab-indicator {
+  position: absolute;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.9), rgba(184, 134, 11, 0.9));
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+}

@@ -1,0 +1,139 @@
+# Page snapshot
+
+```yaml
+- link "Skip to main content":
+  - /url: "#main-content"
+- banner:
+  - link "Go to Warhammer Tavern homepage":
+    - /url: /
+    - img "Warhammer Tavern logo"
+    - text: Warhammer Tavern
+    - paragraph: Simulator v3
+  - button "Open navigation menu"
+  - button "Enable high contrast mode"
+  - button "Reduce animations"
+  - button "Disable magical particle effects" [pressed]: Disable Magic
+- main:
+  - banner "Welcome to the Warhammer Tavern ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨":
+    - heading "Welcome to the Warhammer Tavern ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨" [level=1]
+    - heading "Simulator v3" [level=2]
+    - paragraph: Experience the most immersive Warhammer Fantasy tavern simulation powered by AI-driven NPCs and Inspira UI components.
+    - group "Main navigation actions":
+      - button "Enter the main tavern area": Enter the Tavern
+      - button "View and interact with tavern characters": Meet the Characters
+  - img
+  - text: "87"
+  - paragraph: Tavern Reputation
+  - img
+  - text: "156"
+  - paragraph: Daily Visitors
+  - img
+  - text: "12"
+  - paragraph: Active Events
+  - text: Meet the Tavern's Inhabitants
+  - paragraph: Interact with AI-powered NPCs from across the Warhammer world
+  - img
+  - heading "Sir Marcus Brightblade" [level=3]
+  - paragraph: Empire Knight
+  - text: Empire Sir Marcus Brightblade ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨
+  - paragraph: A noble knight of the Empire, seeking glory and honor in service to Sigmar.
+  - img
+  - text: "85"
+  - img
+  - text: "78"
+  - button "Start Conversation"
+  - img
+  - heading "Grimjaw Ironbeard" [level=3]
+  - paragraph: Dwarf Slayer
+  - text: Dwarfs Grimjaw Ironbeard ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨
+  - paragraph: A fierce dwarf warrior who has taken the Slayer Oath to redeem his honor.
+  - img
+  - text: "92"
+  - img
+  - text: "65"
+  - button "Start Conversation"
+  - img
+  - heading "Elara Moonwhisper" [level=3]
+  - paragraph: High Elf Mage
+  - text: High Elves Elara Moonwhisper ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨
+  - paragraph: An elegant elven sorceress mastering the winds of magic.
+  - img
+  - text: "70"
+  - img
+  - text: "55"
+  - button "Start Conversation"
+  - img
+  - heading "Thorgrim the Bold" [level=3]
+  - paragraph: Dwarf Ranger
+  - text: Dwarfs Thorgrim the Bold ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨
+  - paragraph: A seasoned ranger who knows every path through the mountains.
+  - img
+  - text: "75"
+  - img
+  - text: "80"
+  - button "Start Conversation"
+  - img
+  - heading "Valdris Shadowbane" [level=3]
+  - paragraph: Witch Hunter
+  - text: Empire Valdris Shadowbane ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨
+  - paragraph: A grim hunter of heretics and creatures of darkness.
+  - img
+  - text: "88"
+  - img
+  - text: "70"
+  - button "Start Conversation"
+  - img
+  - heading "Lyralei Starweaver" [level=3]
+  - paragraph: Wood Elf Scout
+  - text: Wood Elves Lyralei Starweaver ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨
+  - paragraph: A swift scout from the forests of Athel Loren.
+  - img
+  - text: "82"
+  - img
+  - text: "60"
+  - button "Start Conversation"
+  - text: Recent Tavern Events
+  - paragraph: Stay updated with the latest happenings
+  - img
+  - text: Merchant Caravan Arrives
+  - paragraph: A wealthy merchant caravan from Altdorf has arrived with exotic goods.
+  - text: 2 hours ago
+  - img
+  - text: Brawl in the Common Room
+  - paragraph: A heated argument between a dwarf and an elf escalated into a tavern brawl.
+  - text: 4 hours ago
+  - img
+  - text: Mysterious Stranger
+  - paragraph: A hooded figure entered the tavern asking about ancient artifacts.
+  - text: 6 hours ago
+  - img
+  - text: Celebration Feast
+  - paragraph: The tavern hosted a celebration for a successful monster hunt.
+  - text: 1 day ago Ready for Adventure?
+  - paragraph: Join the most immersive Warhammer Fantasy experience with AI-powered storytelling
+  - button "Begin Your Journey"
+  - button "Learn More"
+  - text: ✨ ✨ ✨ ✨
+- contentinfo:
+  - paragraph: © 2025 Warhammer Tavern Simulator v3. Powered by Inspira UI
+  - status "Connected to Tavern"
+  - text: Connected to Tavern
+- navigation "Quick navigation dock":
+  - menubar:
+    - menuitem "Navigate to Tavern": Tavern
+    - menuitem "Navigate to Characters": Characters
+    - menuitem "Navigate to Chat": Chat
+    - menuitem "Navigate to Quests": Quests
+    - menuitem "Navigate to Inventory": Inventory
+    - menuitem "Navigate to Map": Map
+    - menuitem "Navigate to GM Tools": GM Tools
+- img
+- button "Go to parent" [disabled]
+- button "Open in editor"
+- button "Close"
+- button "Toggle Nuxt DevTools":
+  - img
+- text: 746 ms
+- button "Toggle Component Inspector":
+  - img
+```

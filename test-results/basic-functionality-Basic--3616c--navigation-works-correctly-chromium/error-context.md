@@ -1,0 +1,236 @@
+# Page snapshot
+
+```yaml
+- link "Skip to main content":
+  - /url: "#main-content"
+- banner:
+  - link "Go to Warhammer Tavern homepage":
+    - /url: /
+    - img "Warhammer Tavern logo"
+    - text: Warhammer Tavern
+    - paragraph: Simulator v3
+  - navigation "Main navigation":
+    - link "Tavern":
+      - /url: /
+    - link "Characters":
+      - /url: /characters
+    - link "Quests":
+      - /url: /quests
+    - link "Inventory":
+      - /url: /inventory
+    - link "Settings":
+      - /url: /settings
+  - button "Enable high contrast mode"
+  - button "Reduce animations"
+  - button "Disable magical particle effects" [pressed]: Disable Magic
+- main:
+  - text: Legendary Characters ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ Meet the Heroes & Villains of the Warhammer World
+  - button "All Factions":
+    - img
+    - text: All Factions
+  - button "Empire":
+    - img
+    - text: Empire
+  - button "Chaos":
+    - img
+    - text: Chaos
+  - button "Elves":
+    - img
+    - text: Elves
+  - button "Dwarfs":
+    - img
+    - text: Dwarfs
+  - button "Undead":
+    - img
+    - text: Undead
+  - img
+  - img
+  - text: Online Sir Marcus Brightblade
+  - paragraph: Knight of the Blazing Sun
+  - text: Empire
+  - img
+  - text: "85"
+  - paragraph: Attack
+  - img
+  - text: "78"
+  - paragraph: Defense
+  - img
+  - text: "45"
+  - paragraph: Magic
+  - paragraph: A noble knight of the Empire, seeking glory and honor in service to Sigmar. His blade has never known defeat.
+  - button "Talk":
+    - img
+    - text: Talk
+  - button "Details":
+    - img
+    - text: Details
+  - img
+  - img
+  - text: Online Grimjaw Ironbeard
+  - paragraph: Slayer of the Broken Chain
+  - text: Dwarfs
+  - img
+  - text: "92"
+  - paragraph: Attack
+  - img
+  - text: "65"
+  - paragraph: Defense
+  - img
+  - text: "20"
+  - paragraph: Magic
+  - paragraph: A fierce dwarf warrior who has taken the Slayer Oath to redeem his honor. Death before dishonor!
+  - button "Talk":
+    - img
+    - text: Talk
+  - button "Details":
+    - img
+    - text: Details
+  - img
+  - img
+  - text: Offline Elara Moonwhisper
+  - paragraph: High Mage of Hoeth
+  - text: Elves
+  - img
+  - text: "70"
+  - paragraph: Attack
+  - img
+  - text: "55"
+  - paragraph: Defense
+  - img
+  - text: "98"
+  - paragraph: Magic
+  - paragraph: An elegant elven sorceress mastering the winds of magic. Her knowledge spans centuries.
+  - button "Talk":
+    - img
+    - text: Talk
+  - button "Details":
+    - img
+    - text: Details
+  - img
+  - img
+  - text: Online Thorgrim the Bold
+  - paragraph: Ranger of the Grey Mountains
+  - text: Dwarfs
+  - img
+  - text: "75"
+  - paragraph: Attack
+  - img
+  - text: "80"
+  - paragraph: Defense
+  - img
+  - text: "30"
+  - paragraph: Magic
+  - paragraph: A seasoned ranger who knows every path through the mountains. His aim never misses.
+  - button "Talk":
+    - img
+    - text: Talk
+  - button "Details":
+    - img
+    - text: Details
+  - img
+  - img
+  - text: Online Valdris Shadowbane
+  - paragraph: Witch Hunter Captain
+  - text: Empire
+  - img
+  - text: "88"
+  - paragraph: Attack
+  - img
+  - text: "70"
+  - paragraph: Defense
+  - img
+  - text: "65"
+  - paragraph: Magic
+  - paragraph: A grim hunter of heretics and creatures of darkness. His faith is his shield.
+  - button "Talk":
+    - img
+    - text: Talk
+  - button "Details":
+    - img
+    - text: Details
+  - img
+  - img
+  - text: Offline Lyralei Starweaver
+  - paragraph: Scout of Athel Loren
+  - text: Elves
+  - img
+  - text: "82"
+  - paragraph: Attack
+  - img
+  - text: "60"
+  - paragraph: Defense
+  - img
+  - text: "75"
+  - paragraph: Magic
+  - paragraph: A swift scout from the forests of Athel Loren. She moves like the wind through trees.
+  - button "Talk":
+    - img
+    - text: Talk
+  - button "Details":
+    - img
+    - text: Details
+  - img
+  - img
+  - text: Online Malachar the Damned
+  - paragraph: Chaos Sorcerer
+  - text: Chaos
+  - img
+  - text: "65"
+  - paragraph: Attack
+  - img
+  - text: "50"
+  - paragraph: Defense
+  - img
+  - text: "95"
+  - paragraph: Magic
+  - paragraph: A fallen wizard who has embraced the dark powers of Chaos. His presence chills the air.
+  - button "Talk":
+    - img
+    - text: Talk
+  - button "Details":
+    - img
+    - text: Details
+  - img
+  - img
+  - text: Offline Heinrich von Carstein
+  - paragraph: Vampire Lord
+  - text: Undead
+  - img
+  - text: "90"
+  - paragraph: Attack
+  - img
+  - text: "85"
+  - paragraph: Defense
+  - img
+  - text: "88"
+  - paragraph: Magic
+  - paragraph: An ancient vampire lord with centuries of dark knowledge. Death is but a doorway for him.
+  - button "Talk":
+    - img
+    - text: Talk
+  - button "Details":
+    - img
+    - text: Details
+- contentinfo:
+  - paragraph: © 2025 Warhammer Tavern Simulator v3. Powered by Inspira UI
+  - status "Connected to Tavern"
+  - text: Connected to Tavern
+- navigation "Quick navigation dock":
+  - menubar:
+    - menuitem "Navigate to Tavern": Tavern
+    - menuitem "Navigate to Characters": Characters
+    - menuitem "Navigate to Chat": Chat
+    - menuitem "Navigate to Quests": Quests
+    - menuitem "Navigate to Inventory": Inventory
+    - menuitem "Navigate to Map": Map
+    - menuitem "Navigate to GM Tools": GM Tools
+- img
+- button "Go to parent" [disabled]
+- button "Open in editor"
+- button "Close"
+- button "Toggle Nuxt DevTools":
+  - img
+- text: 636 ms
+- button "Toggle Component Inspector":
+  - img
+```

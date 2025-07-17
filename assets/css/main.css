@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Warhammer Tavern v3 - Main CSS with Inspira UI Integration */
+
+@layer base {
+  :root {
+    /* Enhanced Artistic Color Palette - Inspired by Renaissance Masters */
+    /* Deep, rich backgrounds with subtle warmth - da Vinci's sfumato influence */
+    --background: 28 18 12; /* Deeper, richer tavern brown with more contrast */
+    --foreground: 255 248 220; /* Warm cornsilk for better readability */
+
+    /* Card system with layered depth - Picasso's dimensional approach */
+    --card: 42 28 18; /* Warmer card background with better contrast */
+    --card-foreground: 255 248 220; /* Consistent warm white */
+    --popover: 22 15 10; /* Deeper popover for better hierarchy */
+    --popover-foreground: 255 215 0; /* Bright gold for emphasis */
+
+    /* Primary palette - Enhanced golden ratios */
+    --primary: 255 215 0; /* Classic Empire gold - unchanged for brand consistency */
+    --primary-foreground: 28 18 12; /* Matching deep background */
+
+    /* Secondary palette - Richer earth tones */
+    --secondary: 160 82 45; /* Warmer, more saturated brown */
+    --secondary-foreground: 255 248 220; /* Consistent light text */
+
+    /* Muted tones - Better contrast for accessibility */
+    --muted: 85 55 35; /* Lighter muted for better contrast */
+    --muted-foreground: 205 164 92; /* Warmer muted text */
+
+    /* Accent colors - Fire and warmth inspired */
+    --accent: 255 87 34; /* Warmer orange-red for tavern fires */
+    --accent-foreground: 28 18 12; /* Deep contrast */
+
+    /* Destructive - Enhanced visibility */
+    --destructive: 183 28 28; /* Brighter red for better visibility */
+    --destructive-foreground: 255 255 255; /* Pure white for maximum contrast */
+
+    /* Interactive elements - Enhanced usability */
+    --border: 160 82 45; /* Warmer border matching secondary */
+    --input: 85 55 35; /* Lighter input background */
+    --ring: 255 215 0; /* Bright gold focus ring */
+    --radius: 0.75rem; /* Slightly more rounded for softer feel */
+    
+    /* Faction-specific CSS Variables */
+    --faction-empire: 255 215 0;
+    --faction-chaos: 139 0 0;
+    --faction-elves: 34 139 34;
+    --faction-dwarfs: 184 134 11;
+    --faction-undead: 75 0 130;
+    --faction-orcs: 85 107 47;    
+    /* Animation Variables */
+    --animation-duration: 0.3s;
+    --animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    background-image: 
+      radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 69, 0, 0.05) 0%, transparent 50%),
+      linear-gradient(135deg, rgb(47, 25, 16) 0%, rgb(26, 15, 10) 100%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  /* Typography Classes */
+  .font-medieval {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    font-display: swap;
+  }
+
+  .font-fantasy {
+    font-family: 'Uncial Antiqua', cursive;
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  .font-sharp {
+    font-family: 'MedievalSharp', cursive;
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  /* Faction Theme Classes - Optimized with CSS Custom Properties */
+  .faction-empire {
+    @apply bg-gradient-to-r text-yellow-900 shadow-gold;
+    background-image: linear-gradient(to right, rgb(var(--faction-empire) / 0.9), rgb(var(--faction-empire) / 0.7));
+    transition: all var(--animation-duration) var(--animation-easing);
+  }
+
+  .faction-chaos {
+    @apply bg-gradient-to-r text-red-100 shadow-lg;
+    background-image: linear-gradient(to right, rgb(var(--faction-chaos) / 0.9), rgb(var(--faction-chaos) / 0.7));
+    transition: all var(--animation-duration) var(--animation-easing);
+  }
+
+  .faction-elves {
+    @apply bg-gradient-to-r text-green-100 shadow-lg;
+    background-image: linear-gradient(to right, rgb(var(--faction-elves) / 0.9), rgb(var(--faction-elves) / 0.7));
+    transition: all var(--animation-duration) var(--animation-easing);
+  }
+
+  .faction-dwarfs {
+    @apply bg-gradient-to-r text-amber-100 shadow-lg;
+    background-image: linear-gradient(to right, rgb(var(--faction-dwarfs) / 0.9), rgb(var(--faction-dwarfs) / 0.7));
+    transition: all var(--animation-duration) var(--animation-easing);
+  }
+
+  .faction-undead {
+    @apply bg-gradient-to-r text-purple-100 shadow-lg;
+    background-image: linear-gradient(to right, rgb(var(--faction-undead) / 0.9), rgb(var(--faction-undead) / 0.7));
+    transition: all var(--animation-duration) var(--animation-easing);
+  }
+
+  .faction-orcs {
+    @apply bg-gradient-to-r text-green-100 shadow-lg;
+    background-image: linear-gradient(to right, rgb(var(--faction-orcs) / 0.9), rgb(var(--faction-orcs) / 0.7));
+    transition: all var(--animation-duration) var(--animation-easing);
+  }
+
+  /* Tavern Atmosphere Effects - Optimized for Performance */
+  .tavern-atmosphere {
+    background-image:
+      radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 69, 0, 0.1) 0%, transparent 50%),
+      linear-gradient(135deg, #2f1b14 0%, #1a0f0a 100%);
+    will-change: transform;
+  }
+
+  .magic-particles {
+    filter: blur(0.5px);
+    opacity: 0.7;
+    will-change: transform, opacity;
+  }
+
+  .alchemy-background {
+    opacity: 0.3;
+    mix-blend-mode: multiply;
+    will-change: opacity;
+  }
+
+  /* Performance Optimizations */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  .smooth-scroll {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Accessibility Utilities */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .focus-visible {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background;
+  }
+
+  /* High Contrast Mode Support */
+  @media (prefers-contrast: high) {
+    .faction-empire,
+    .faction-chaos,
+    .faction-elves,
+    .faction-dwarfs,
+    .faction-undead,
+    .faction-orcs {
+      border: 2px solid currentColor;
+    }
+  }
+
+  /* Reduced Motion Support */
+  @media (prefers-reduced-motion: reduce) {
+    .tavern-atmosphere,
+    .magic-particles,
+    .alchemy-background {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+
+  /* Dark Mode Optimizations */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: 20 15 10;
+      --foreground: 255 215 0;
+    }
+  }
+
+  /* Print Styles */
+  @media print {
+    .tavern-atmosphere,
+    .magic-particles,
+    .alchemy-background {
+      background: none !important;
+      filter: none !important;
+    }
+
+    .faction-empire,
+    .faction-chaos,
+    .faction-elves,
+    .faction-dwarfs,
+    .faction-undead,
+    .faction-orcs {
+      background: none !important;
+      color: black !important;
+      border: 1px solid black;
+    }
+  }
+}

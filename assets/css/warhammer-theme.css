@@ -1,0 +1,570 @@
+/* Warhammer Fantasy Theme - Enhanced Accessibility & Visual Design */
+
+/* Import Authentic Medieval Fonts with fallbacks */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&family=Uncial+Antiqua&family=MedievalSharp&display=swap');
+
+/* Enhanced Warhammer Fantasy Color Palette with WCAG AA Compliance */
+:root {
+  /* Core Warhammer Colors - Enhanced for accessibility */
+  --wh-black: #000000;
+  --wh-dark-grey: #1a1a1a;
+  --wh-grey: #2a2a2a;
+  --wh-light-grey: #4a4a4a;
+  --wh-bone: #f8f5f0;
+  --wh-parchment: #ede4c8;
+  --wh-aged-paper: #d9c7a0;
+
+  /* Empire Colors - Improved contrast */
+  --wh-empire-red: #b71c1c;
+  --wh-empire-gold: #ffb300;
+  --wh-empire-blue: #1565c0;
+
+  /* Chaos Colors - Enhanced visibility */
+  --wh-chaos-red: #8b0000;
+  --wh-chaos-purple: #6a1b9a;
+  --wh-chaos-green: #388e3c;
+
+  /* Tavern Atmosphere - Optimized contrast */
+  --wh-fire-orange: #ff7043;
+  --wh-fire-red: #e53935;
+  --wh-candle-yellow: #ffc107;
+  --wh-wood-brown: #8d6e63;
+  --wh-dark-wood: #5d4037;
+  --wh-iron-grey: #455a64;
+  --wh-copper: #bf8f36;
+  --wh-brass: #c9b037;
+
+  /* Typography with fallbacks */
+  --wh-font-display: 'Cinzel Decorative', 'Times New Roman', serif;
+  --wh-font-heading: 'Cinzel', 'Georgia', serif;
+  --wh-font-body: 'Cinzel', 'Georgia', serif;
+  --wh-font-medieval: 'MedievalSharp', 'Times New Roman', serif;
+  --wh-font-uncial: 'Uncial Antiqua', 'Times New Roman', serif;
+
+  /* Accessibility Colors */
+  --wh-focus-ring: #2196f3;
+  --wh-error: #f44336;
+  --wh-warning: #ff9800;
+  --wh-success: #4caf50;
+  --wh-info: #2196f3;
+
+  /* High Contrast Mode Colors */
+  --wh-hc-background: #000000;
+  --wh-hc-foreground: #ffffff;
+  --wh-hc-primary: #ffff00;
+  --wh-hc-secondary: #00ffff;
+  --wh-hc-border: #ffffff;
+
+  /* Animation and Motion */
+  --wh-animation-duration: 0.3s;
+  --wh-animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Spacing Scale */
+  --wh-space-xs: 0.25rem;
+  --wh-space-sm: 0.5rem;
+  --wh-space-md: 1rem;
+  --wh-space-lg: 1.5rem;
+  --wh-space-xl: 2rem;
+  --wh-space-2xl: 3rem;
+
+  /* Border Radius */
+  --wh-radius-sm: 0.25rem;
+  --wh-radius-md: 0.5rem;
+  --wh-radius-lg: 0.75rem;
+  --wh-radius-xl: 1rem;
+}
+
+/* Medieval Scrollbars - Optimized for Performance */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(47, 25, 16, 0.5);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(255, 215, 0, 0.8), rgba(184, 134, 11, 0.8));
+  border-radius: 6px;
+  border: 2px solid rgba(47, 25, 16, 0.5);
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(255, 215, 0, 1), rgba(184, 134, 11, 1));
+}
+
+/* Firefox Scrollbar Support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 215, 0, 0.8) rgba(47, 25, 16, 0.5);
+}
+
+/* Selection Styling */
+::selection {
+  background: rgba(255, 215, 0, 0.3);
+  color: rgb(47, 25, 16);
+}
+
+/* Focus Styles */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-amber-900;
+}
+
+/* Warhammer Specific Animations */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { 
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+  }
+  50% { 
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.6);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes medieval-entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+/* Animation Classes */
+.animate-flicker {
+  animation: flicker 2s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-medieval-entrance {
+  animation: medieval-entrance 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Faction Specific Styles */
+.empire-banner {
+  background: linear-gradient(135deg, #ffd700 0%, #b8860b 100%);
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+.chaos-banner {
+  background: linear-gradient(135deg, #8b0000 0%, #dc143c 50%, #8b0000 100%);
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+.elves-banner {
+  background: linear-gradient(135deg, #228b22 0%, #32cd32 50%, #228b22 100%);
+  background-size: 200% 200%;
+  animation: gradient-shift 5s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Tavern Specific Elements */
+.tavern-wood-texture {
+  background-image: 
+    linear-gradient(45deg, rgba(139, 69, 19, 0.1) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(139, 69, 19, 0.1) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(139, 69, 19, 0.1) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(139, 69, 19, 0.1) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+.tavern-stone-texture {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(105, 105, 105, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(105, 105, 105, 0.1) 0%, transparent 50%);
+  background-size: 40px 40px;
+}
+
+.fire-glow {
+  box-shadow: 
+    0 0 20px rgba(255, 69, 0, 0.4),
+    0 0 40px rgba(255, 69, 0, 0.2),
+    0 0 60px rgba(255, 69, 0, 0.1);
+  animation: fire-flicker 2s ease-in-out infinite alternate;
+}
+
+@keyframes fire-flicker {
+  0% { 
+    box-shadow: 
+      0 0 20px rgba(255, 69, 0, 0.4),
+      0 0 40px rgba(255, 69, 0, 0.2),
+      0 0 60px rgba(255, 69, 0, 0.1);
+  }
+  100% { 
+    box-shadow: 
+      0 0 30px rgba(255, 69, 0, 0.6),
+      0 0 50px rgba(255, 69, 0, 0.3),
+      0 0 70px rgba(255, 69, 0, 0.15);
+  }
+}
+
+/* Character Portrait Frames */
+.character-frame-empire {
+  border: 3px solid;
+  border-image: linear-gradient(45deg, #ffd700, #b8860b, #ffd700) 1;
+  position: relative;
+}
+
+.character-frame-empire::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(45deg, #ffd700, #b8860b, #ffd700);
+  z-index: -1;
+  border-radius: inherit;
+}
+
+/* Interactive Elements */
+.tavern-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tavern-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.tavern-button:hover::before {
+  left: 100%;
+}
+
+/* Responsive Design Helpers */
+@media (max-width: 768px) {
+  .font-medieval {
+    font-size: 0.9em;
+  }
+  
+  .tavern-wood-texture,
+  .tavern-stone-texture {
+    background-size: 15px 15px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .animate-flicker,
+  .animate-glow-pulse,
+  .animate-float,
+  .fire-glow {
+    animation: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+}
+
+/* Modern CSS Features and Optimizations */
+.warhammer-container {
+  container-type: inline-size;
+  container-name: warhammer-ui;
+}
+
+/* Container Queries for Responsive Components */
+@container warhammer-ui (min-width: 768px) {
+  .tavern-wood-texture {
+    background-size: 40px 40px;
+  }
+
+  .fire-effect {
+    filter: blur(0.5px) brightness(1.1);
+  }
+}
+
+/* CSS Logical Properties for Better Internationalization */
+.warhammer-text {
+  margin-inline-start: 1rem;
+  margin-inline-end: 1rem;
+  padding-block: 0.5rem;
+  border-inline-start: 2px solid #ffd700;
+}
+
+/* Performance Optimizations */
+.performance-optimized {
+  content-visibility: auto;
+  contain-intrinsic-size: 200px;
+}
+
+/* Accessibility Improvements */
+@media (prefers-contrast: high) {
+  .empire-banner,
+  .chaos-banner,
+  .elves-banner {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Enhanced Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .animate-flicker,
+  .animate-glow-pulse,
+  .animate-float,
+  .animate-medieval-entrance,
+  .empire-banner,
+  .chaos-banner,
+  .elves-banner,
+  .wh-fire-glow,
+  .wh-candle-glow {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Enhanced Accessibility Styles */
+
+/* Screen Reader Only Content */
+.wh-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.wh-sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Enhanced Focus Styles */
+.wh-focus-ring:focus,
+.wh-focus-ring:focus-visible,
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--wh-focus-ring);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.2);
+}
+
+/* High Contrast Mode Enhancements */
+@media (prefers-contrast: high) {
+  :root {
+    --wh-black: #000000;
+    --wh-bone: #ffffff;
+    --wh-parchment: #ffffff;
+    --wh-aged-paper: #ffffff;
+    --wh-empire-gold: #ffff00;
+    --wh-grey: #808080;
+    --wh-light-grey: #c0c0c0;
+  }
+
+  .wh-card {
+    border: 2px solid var(--wh-bone);
+    background: var(--wh-black);
+    color: var(--wh-bone);
+  }
+
+  .wh-btn {
+    border: 2px solid currentColor;
+    background: var(--wh-black);
+    color: var(--wh-bone);
+  }
+
+  .wh-btn-primary {
+    background: var(--wh-empire-gold);
+    color: var(--wh-black);
+  }
+}
+
+/* Enhanced Button States */
+.wh-btn:focus-visible {
+  outline: 2px solid var(--wh-focus-ring);
+  outline-offset: 2px;
+}
+
+.wh-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.wh-btn[aria-pressed="true"] {
+  background-color: var(--wh-empire-gold);
+  color: var(--wh-black);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Enhanced Form Controls */
+.wh-input:focus {
+  outline: 2px solid var(--wh-focus-ring);
+  outline-offset: 2px;
+  border-color: var(--wh-empire-gold);
+}
+
+.wh-input:invalid {
+  border-color: var(--wh-error);
+  box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.2);
+}
+
+.wh-input[aria-describedby] {
+  margin-bottom: 0.25rem;
+}
+
+/* Error and Status Messages */
+.wh-error-message {
+  color: var(--wh-error);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.wh-success-message {
+  color: var(--wh-success);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Skip Links */
+.wh-skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--wh-empire-gold);
+  color: var(--wh-black);
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  z-index: 1000;
+  transition: top 0.3s ease;
+}
+
+.wh-skip-link:focus {
+  top: 6px;
+}
+
+/* Touch Target Improvements */
+@media (pointer: coarse) {
+  .wh-btn,
+  .wh-input,
+  [role="button"],
+  button,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .wh-btn {
+    padding: 0.75rem 1.5rem;
+  }
+
+  /* Improve touch spacing */
+  .wh-btn + .wh-btn {
+    margin-top: 0.5rem;
+  }
+}
+
+/* Responsive Design with Accessibility */
+@media (max-width: 768px) {
+  .wh-card {
+    padding: 1rem;
+  }
+
+  h1, .wh-title {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .wh-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    min-height: 44px;
+  }
+
+  /* Larger text for better readability */
+  body {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .wh-card {
+    border: 1px solid #000;
+    box-shadow: none;
+    background: white;
+    color: black;
+  }
+
+  .wh-btn {
+    border: 1px solid #000;
+    background: white;
+    color: black;
+  }
+
+  .wh-fire-glow,
+  .wh-candle-glow,
+  .wh-weathered::after {
+    display: none;
+  }
+
+  /* Hide decorative elements */
+  .aurora-background,
+  .magic-particles,
+  .floating-dock {
+    display: none !important;
+  }
+}
