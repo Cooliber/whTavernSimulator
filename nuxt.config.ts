@@ -3,6 +3,31 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
+  // Static Site Generation for Netlify deployment
+  ssr: true,
+  nitro: {
+    preset: 'netlify-static',
+    prerender: {
+      crawlLinks: true,
+      routes: [
+        '/',
+        '/characters',
+        '/tavern',
+        '/gm-dashboard',
+        '/settings',
+        '/about',
+        '/generators',
+        '/inspira-test',
+        '/battle',
+        '/inventory',
+        '/map',
+        '/test-components',
+        '/conversations',
+        '/quests'
+      ]
+    }
+  },
+
   // Modules for Warhammer Tavern v3 with Inspira UI
   modules: [
     '@nuxtjs/tailwindcss',
@@ -47,13 +72,8 @@ export default defineNuxtConfig({
     host: '0.0.0.0'
   },
 
-  // Nitro configuration for server
-  nitro: {
-    devServer: {
-      port: 5920,
-      host: '0.0.0.0'
-    }
-  },
+  // Additional Nitro configuration for development
+  // Production configuration is handled above
 
   // Vite configuration for optimizations
   vite: {
