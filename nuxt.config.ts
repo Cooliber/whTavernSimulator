@@ -33,7 +33,8 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
     '@vueuse/nuxt',
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/i18n'
   ],
 
   // Auto-import components
@@ -95,6 +96,35 @@ export default defineNuxtConfig({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'description', content: 'Immersive Warhammer Fantasy Tavern Simulator with AI-powered NPCs' }
       ]
+    }
+  },
+
+  // i18n Configuration
+  i18n: {
+    locales: [
+      {
+        code: 'pl',
+        iso: 'pl-PL',
+        name: 'Polski',
+        file: 'pl.json'
+      },
+      {
+        code: 'en',
+        iso: 'en-US',
+        name: 'English',
+        file: 'en.json'
+      }
+    ],
+    lazy: true,
+    langDir: 'locales/',
+    defaultLocale: 'pl',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',
+      alwaysRedirect: false,
+      fallbackLocale: 'pl'
     }
   },
 

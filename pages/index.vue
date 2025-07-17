@@ -25,14 +25,14 @@
         <div class="space-y-4">
           <SparklesText
             id="hero-title"
-            text="Welcome to the Warhammer Tavern"
+            :text="$t('hero.title')"
             class="text-4xl md:text-6xl font-medieval text-foreground"
             :sparkles-count="prefersReducedMotion ? 0 : 15"
             role="heading"
             aria-level="1"
           />
           <Text3D
-            text="Simulator v3"
+            :text="$t('hero.subtitle')"
             class="text-2xl md:text-3xl font-fantasy text-primary"
             :depth="prefersReducedMotion ? 0 : 3"
             role="heading"
@@ -44,9 +44,10 @@
           class="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed"
           role="text"
         >
-          Experience the most immersive Warhammer Fantasy tavern simulation powered by
-          <span class="text-primary font-medieval">AI-driven NPCs</span> and
-          <span class="text-primary font-medieval">Inspira UI</span> components.
+          {{ $t('hero.description', {
+            aiNpcs: `<span class="text-primary font-medieval">${$t('hero.aiNpcs')}</span>`,
+            inspiraUi: `<span class="text-primary font-medieval">${$t('hero.inspiraUi')}</span>`
+          }) }}
         </p>
 
         <div
@@ -57,21 +58,21 @@
           <RippleButton
             class="faction-empire px-8 py-3 text-lg font-medieval wh-focus-ring"
             ripple-color="rgb(255, 215, 0)"
-            :aria-label="'Enter the main tavern area'"
+            :aria-label="$t('hero.enterTavernAriaLabel')"
             @click="enterTavern"
           >
             <Icon name="door-open" class="w-5 h-5 mr-2" aria-hidden="true" />
-            Enter the Tavern
+            {{ $t('hero.enterTavern') }}
           </RippleButton>
 
           <RainbowButton
             :colors="['#228b22', '#32cd32', '#90ee90']"
             class="px-8 py-3 text-lg font-medieval wh-focus-ring"
-            :aria-label="'View and interact with tavern characters'"
+            :aria-label="$t('hero.meetCharactersAriaLabel')"
             @click="viewCharacters"
           >
             <Icon name="users" class="w-5 h-5 mr-2" aria-hidden="true" />
-            Meet the Characters
+            {{ $t('hero.meetCharacters') }}
           </RainbowButton>
         </div>
       </div>
@@ -94,7 +95,7 @@
               :value="stat.value"
               class="text-3xl font-medieval text-foreground"
             />
-            <p class="text-sm text-muted-foreground font-medieval">{{ stat.label }}</p>
+            <p class="text-sm text-muted-foreground font-medieval">{{ $t(`stats.${stat.key}`) }}</p>
           </div>
         </div>
       </Card3D>
@@ -103,12 +104,12 @@
     <!-- Character Gallery -->
     <section class="space-y-6">
       <div class="text-center space-y-2">
-        <HyperText 
-          text="Meet the Tavern's Inhabitants"
+        <HyperText
+          :text="$t('characters.title')"
           class="text-3xl font-medieval text-foreground"
           :animation-duration="1500"
         />
-        <p class="text-muted-foreground">Interact with AI-powered NPCs from across the Warhammer world</p>
+        <p class="text-muted-foreground">{{ $t('characters.subtitle') }}</p>
       </div>
       
       <ExpandableGallery 
@@ -241,11 +242,14 @@
     </section>
   </div>
 </template><script setup lang="ts">
+// Composables
+const { t } = useI18n()
+
 // Page metadata
 useHead({
-  title: 'Warhammer Tavern Simulator v3 - Immersive Fantasy Experience',
+  title: () => `${t('hero.title')} - ${t('hero.subtitle')}`,
   meta: [
-    { name: 'description', content: 'Experience the most immersive Warhammer Fantasy tavern simulation with AI-powered NPCs and stunning Inspira UI components.' }
+    { name: 'description', content: () => t('hero.description', { aiNpcs: t('hero.aiNpcs'), inspiraUi: t('hero.inspiraUi') }) }
   ]
 })
 
@@ -273,19 +277,19 @@ onMounted(() => {
 const tavernStats = ref([
   {
     id: 'reputation',
-    label: 'Tavern Reputation',
+    key: 'tavernReputation',
     value: 87,
     icon: 'star'
   },
   {
     id: 'visitors',
-    label: 'Daily Visitors',
+    key: 'dailyVisitors',
     value: 156,
     icon: 'users'
   },
   {
     id: 'events',
-    label: 'Active Events',
+    key: 'activeEvents',
     value: 12,
     icon: 'calendar'
   }

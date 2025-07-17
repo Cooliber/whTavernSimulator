@@ -1,0 +1,219 @@
+{
+  "navigation": {
+    "home": "Home",
+    "tavern": "Tavern",
+    "characters": "Characters",
+    "conversations": "Conversations",
+    "quests": "Quests",
+    "inventory": "Inventory",
+    "map": "Map",
+    "battle": "Battle",
+    "generators": "Generators",
+    "gmDashboard": "GM Dashboard",
+    "settings": "Settings",
+    "about": "About"
+  },
+  "hero": {
+    "title": "Welcome to the Warhammer Tavern",
+    "subtitle": "Simulator v3",
+    "description": "Experience the most immersive Warhammer Fantasy tavern simulation powered by {aiNpcs} and {inspiraUi} components.",
+    "aiNpcs": "AI-driven NPCs",
+    "inspiraUi": "Inspira UI",
+    "enterTavern": "Enter the Tavern",
+    "enterTavernAriaLabel": "Enter the main tavern area",
+    "meetCharacters": "Meet the Characters",
+    "meetCharactersAriaLabel": "View and interact with tavern characters"
+  },
+  "stats": {
+    "tavernReputation": "Tavern Reputation",
+    "dailyVisitors": "Daily Visitors",
+    "activeEvents": "Active Events"
+  },
+  "characters": {
+    "title": "Meet the Tavern's Inhabitants",
+    "subtitle": "Interact with AI-powered NPCs from across the Warhammer world",
+    "startConversation": "Start Conversation",
+    "attack": "Attack",
+    "defense": "Defense",
+    "classes": {
+      "empireKnight": "Empire Knight",
+      "dwarfSlayer": "Dwarf Slayer",
+      "highElfMage": "High Elf Mage",
+      "dwarfRanger": "Dwarf Ranger",
+      "witchHunter": "Witch Hunter",
+      "woodElfScout": "Wood Elf Scout"
+    },
+    "factions": {
+      "empire": "Empire",
+      "dwarfs": "Dwarfs",
+      "highElves": "High Elves",
+      "woodElves": "Wood Elves"
+    },
+    "descriptions": {
+      "marcus": "A noble knight of the Empire, seeking glory and honor in service to Sigmar.",
+      "grimjaw": "A fierce dwarf warrior who has taken the Slayer Oath to redeem his honor.",
+      "elara": "An elegant elven sorceress mastering the winds of magic.",
+      "thorgrim": "A seasoned ranger who knows every path through the mountains.",
+      "valdris": "A grim hunter of heretics and creatures of darkness.",
+      "lyralei": "A swift scout from the forests of Athel Loren."
+    }
+  },
+  "events": {
+    "title": "Recent Tavern Events",
+    "subtitle": "Stay updated with the latest happenings",
+    "merchantCaravan": "Merchant Caravan Arrives",
+    "merchantCaravanDesc": "A wealthy merchant caravan from Altdorf has arrived with exotic goods.",
+    "tavernBrawl": "Brawl in the Common Room",
+    "tavernBrawlDesc": "A heated argument between a dwarf and an elf escalated into a tavern brawl.",
+    "mysteriousStranger": "Mysterious Stranger",
+    "mysteriousStrangerDesc": "A hooded figure entered the tavern asking about ancient artifacts.",
+    "celebrationFeast": "Celebration Feast",
+    "celebrationFeastDesc": "The tavern hosted a celebration for a successful monster hunt.",
+    "timeAgo": {
+      "hours": "{count} hours ago",
+      "hour": "1 hour ago",
+      "days": "{count} days ago",
+      "day": "1 day ago"
+    }
+  },
+  "cta": {
+    "readyForAdventure": "Ready for Adventure?",
+    "joinExperience": "Join the most immersive Warhammer Fantasy experience with AI-powered storytelling",
+    "beginJourney": "Begin Your Journey",
+    "learnMore": "Learn More"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Retry",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "refresh": "Refresh",
+    "you": "You"
+  },
+  "tavern": {
+    "title": "The Warhammer Tavern",
+    "subtitle": "Where heroes gather and tales are told",
+    "loadingOfferings": "Loading tavern offerings...",
+    "tryAgain": "Try Again",
+    "categories": {
+      "drinks": "Drinks",
+      "food": "Food",
+      "rooms": "Rooms",
+      "services": "Services",
+      "entertainment": "Entertainment"
+    },
+    "availability": {
+      "common": "Common",
+      "uncommon": "Uncommon",
+      "rare": "Rare",
+      "legendary": "Legendary"
+    },
+    "orderItem": "Order",
+    "outOfStock": "Out of Stock",
+    "price": "Price",
+    "description": "Description"
+  },
+  "conversations": {
+    "title": "Conversations",
+    "subtitle": "Engage with AI-Powered NPCs",
+    "startNew": "Start New Conversation",
+    "selectCharacter": "Select Character",
+    "typeMessage": "Type a message...",
+    "send": "Send",
+    "thinking": "Thinking...",
+    "recent": "Recent Conversations",
+    "welcome": "Welcome to the Tavern",
+    "welcomeDesc": "Select a conversation or start a new one to chat with tavern inhabitants",
+    "quickActions": "Quick Actions",
+    "createGroup": "Create Group Conversation",
+    "joinRandom": "Join Random Conversation",
+    "timeAgo": {
+      "justNow": "Just now",
+      "minutesAgo": "{count} minutes ago",
+      "hoursAgo": "{count} hours ago",
+      "daysAgo": "{count} days ago"
+    },
+    "multiAgent": {
+      "title": "Multi-Agent Conversation",
+      "participants": "Participants",
+      "addAgent": "Add Agent",
+      "removeAgent": "Remove Agent",
+      "agentJoined": "{name} joined the conversation",
+      "agentLeft": "{name} left the conversation"
+    }
+  },
+  "quests": {
+    "title": "Quests",
+    "available": "Available Quests",
+    "active": "Active Quests",
+    "completed": "Completed Quests",
+    "difficulty": {
+      "easy": "Easy",
+      "medium": "Medium",
+      "hard": "Hard",
+      "legendary": "Legendary"
+    },
+    "reward": "Reward",
+    "accept": "Accept Quest",
+    "abandon": "Abandon Quest",
+    "complete": "Complete Quest"
+  },
+  "inventory": {
+    "title": "Inventory",
+    "weight": "Weight",
+    "value": "Value",
+    "quantity": "Quantity",
+    "equip": "Equip",
+    "unequip": "Unequip",
+    "use": "Use",
+    "drop": "Drop",
+    "categories": {
+      "weapons": "Weapons",
+      "armor": "Armor",
+      "consumables": "Consumables",
+      "misc": "Miscellaneous",
+      "quest": "Quest Items"
+    }
+  },
+  "battle": {
+    "title": "Battle",
+    "initiative": "Initiative",
+    "health": "Health",
+    "actions": {
+      "attack": "Attack",
+      "defend": "Defend",
+      "cast": "Cast Spell",
+      "item": "Use Item",
+      "flee": "Flee"
+    },
+    "turnOrder": "Turn Order",
+    "damage": "Damage",
+    "healing": "Healing"
+  },
+  "accessibility": {
+    "skipToContent": "Skip to content",
+    "mainNavigation": "Main navigation",
+    "userMenu": "User menu",
+    "languageSelector": "Language selector",
+    "themeToggle": "Theme toggle",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "enableHighContrast": "Enable high contrast mode",
+    "disableHighContrast": "Disable high contrast mode",
+    "enableAnimations": "Enable animations",
+    "reduceAnimations": "Reduce animations",
+    "enableMagic": "Enable Magic",
+    "disableMagic": "Disable Magic"
+  }
+}

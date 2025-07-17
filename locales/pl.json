@@ -1,0 +1,219 @@
+{
+  "navigation": {
+    "home": "Strona Główna",
+    "tavern": "Karczma",
+    "characters": "Postacie",
+    "conversations": "Rozmowy",
+    "quests": "Zadania",
+    "inventory": "Ekwipunek",
+    "map": "Mapa",
+    "battle": "Bitwa",
+    "generators": "Generatory",
+    "gmDashboard": "Panel MG",
+    "settings": "Ustawienia",
+    "about": "O Grze"
+  },
+  "hero": {
+    "title": "Witaj w Karczmie Warhammer",
+    "subtitle": "Symulator v3",
+    "description": "Doświadcz najbardziej immersyjnej symulacji karczmy Warhammer Fantasy napędzanej przez {aiNpcs} i komponenty {inspiraUi}.",
+    "aiNpcs": "NPC sterowane przez AI",
+    "inspiraUi": "Inspira UI",
+    "enterTavern": "Wejdź do Karczmy",
+    "enterTavernAriaLabel": "Wejdź do głównej części karczmy",
+    "meetCharacters": "Poznaj Postacie",
+    "meetCharactersAriaLabel": "Zobacz i wejdź w interakcję z postaciami karczmy"
+  },
+  "stats": {
+    "tavernReputation": "Reputacja Karczmy",
+    "dailyVisitors": "Dzienni Goście",
+    "activeEvents": "Aktywne Wydarzenia"
+  },
+  "characters": {
+    "title": "Poznaj Mieszkańców Karczmy",
+    "subtitle": "Wejdź w interakcję z NPC napędzanymi przez AI ze świata Warhammer",
+    "startConversation": "Rozpocznij Rozmowę",
+    "attack": "Atak",
+    "defense": "Obrona",
+    "classes": {
+      "empireKnight": "Rycerz Imperium",
+      "dwarfSlayer": "Krasnoludzki Pogromca",
+      "highElfMage": "Mag Wysokich Elfów",
+      "dwarfRanger": "Krasnoludzki Strażnik",
+      "witchHunter": "Łowca Czarownic",
+      "woodElfScout": "Zwiadowca Leśnych Elfów"
+    },
+    "factions": {
+      "empire": "Imperium",
+      "dwarfs": "Krasnoludy",
+      "highElves": "Wysokie Elfy",
+      "woodElves": "Leśne Elfy"
+    },
+    "descriptions": {
+      "marcus": "Szlachetny rycerz Imperium, poszukujący chwały i honoru w służbie Sigmara.",
+      "grimjaw": "Zaciekły krasnoludzki wojownik, który złożył Przysięgę Pogromcy, aby odkupić swój honor.",
+      "elara": "Elegancka elficka czarodziejka opanowująca wiatry magii.",
+      "thorgrim": "Doświadczony strażnik, który zna każdą ścieżkę przez góry.",
+      "valdris": "Ponury łowca heretyków i stworzeń ciemności.",
+      "lyralei": "Szybka zwiadowczyni z lasów Athel Loren."
+    }
+  },
+  "events": {
+    "title": "Ostatnie Wydarzenia w Karczmie",
+    "subtitle": "Bądź na bieżąco z najnowszymi wydarzeniami",
+    "merchantCaravan": "Przybywa Karawana Kupiecka",
+    "merchantCaravanDesc": "Bogata karawana kupiecka z Altdorfu przybyła z egzotycznymi towarami.",
+    "tavernBrawl": "Bójka w Sali Głównej",
+    "tavernBrawlDesc": "Gorąca kłótnia między krasnoludem a elfem przerodziła się w karczemną bójkę.",
+    "mysteriousStranger": "Tajemniczy Nieznajomy",
+    "mysteriousStrangerDesc": "Postać w kapturze weszła do karczmy pytając o starożytne artefakty.",
+    "celebrationFeast": "Uczta Świętowania",
+    "celebrationFeastDesc": "Karczma gościła świętowanie udanego polowania na potwory.",
+    "timeAgo": {
+      "hours": "{count} godzin temu",
+      "hour": "godzinę temu",
+      "days": "{count} dni temu",
+      "day": "dzień temu"
+    }
+  },
+  "cta": {
+    "readyForAdventure": "Gotowy na Przygodę?",
+    "joinExperience": "Dołącz do najbardziej immersyjnego doświadczenia Warhammer Fantasy z opowiadaniem napędzanym przez AI",
+    "beginJourney": "Rozpocznij Swoją Podróż",
+    "learnMore": "Dowiedz się Więcej"
+  },
+  "common": {
+    "loading": "Ładowanie...",
+    "error": "Błąd",
+    "retry": "Spróbuj ponownie",
+    "cancel": "Anuluj",
+    "confirm": "Potwierdź",
+    "save": "Zapisz",
+    "delete": "Usuń",
+    "edit": "Edytuj",
+    "close": "Zamknij",
+    "back": "Wstecz",
+    "next": "Dalej",
+    "previous": "Poprzedni",
+    "search": "Szukaj",
+    "filter": "Filtruj",
+    "sort": "Sortuj",
+    "refresh": "Odśwież",
+    "you": "Ty"
+  },
+  "tavern": {
+    "title": "Karczma Warhammer",
+    "subtitle": "Gdzie bohaterowie się gromadzą i opowieści są snute",
+    "loadingOfferings": "Ładowanie oferty karczmy...",
+    "tryAgain": "Spróbuj ponownie",
+    "categories": {
+      "drinks": "Napoje",
+      "food": "Jedzenie",
+      "rooms": "Pokoje",
+      "services": "Usługi",
+      "entertainment": "Rozrywka"
+    },
+    "availability": {
+      "common": "Powszechne",
+      "uncommon": "Rzadkie",
+      "rare": "Bardzo rzadkie",
+      "legendary": "Legendarne"
+    },
+    "orderItem": "Zamów",
+    "outOfStock": "Brak w magazynie",
+    "price": "Cena",
+    "description": "Opis"
+  },
+  "conversations": {
+    "title": "Rozmowy",
+    "subtitle": "Wejdź w interakcję z NPC napędzanymi przez AI",
+    "startNew": "Rozpocznij Nową Rozmowę",
+    "selectCharacter": "Wybierz Postać",
+    "typeMessage": "Napisz wiadomość...",
+    "send": "Wyślij",
+    "thinking": "Myśli...",
+    "recent": "Ostatnie Rozmowy",
+    "welcome": "Witaj w Karczmie",
+    "welcomeDesc": "Wybierz rozmowę lub rozpocznij nową, aby porozmawiać z mieszkańcami karczmy",
+    "quickActions": "Szybkie Akcje",
+    "createGroup": "Utwórz Rozmowę Grupową",
+    "joinRandom": "Dołącz do Losowej Rozmowy",
+    "timeAgo": {
+      "justNow": "Właśnie teraz",
+      "minutesAgo": "{count} minut temu",
+      "hoursAgo": "{count} godzin temu",
+      "daysAgo": "{count} dni temu"
+    },
+    "multiAgent": {
+      "title": "Rozmowa Wieloagentowa",
+      "participants": "Uczestników",
+      "addAgent": "Dodaj Agenta",
+      "removeAgent": "Usuń Agenta",
+      "agentJoined": "{name} dołączył do rozmowy",
+      "agentLeft": "{name} opuścił rozmowę"
+    }
+  },
+  "quests": {
+    "title": "Zadania",
+    "available": "Dostępne Zadania",
+    "active": "Aktywne Zadania",
+    "completed": "Ukończone Zadania",
+    "difficulty": {
+      "easy": "Łatwe",
+      "medium": "Średnie",
+      "hard": "Trudne",
+      "legendary": "Legendarne"
+    },
+    "reward": "Nagroda",
+    "accept": "Przyjmij Zadanie",
+    "abandon": "Porzuć Zadanie",
+    "complete": "Ukończ Zadanie"
+  },
+  "inventory": {
+    "title": "Ekwipunek",
+    "weight": "Waga",
+    "value": "Wartość",
+    "quantity": "Ilość",
+    "equip": "Załóż",
+    "unequip": "Zdejmij",
+    "use": "Użyj",
+    "drop": "Upuść",
+    "categories": {
+      "weapons": "Broń",
+      "armor": "Pancerz",
+      "consumables": "Przedmioty zużywalne",
+      "misc": "Różne",
+      "quest": "Przedmioty zadaniowe"
+    }
+  },
+  "battle": {
+    "title": "Bitwa",
+    "initiative": "Inicjatywa",
+    "health": "Zdrowie",
+    "actions": {
+      "attack": "Atak",
+      "defend": "Obrona",
+      "cast": "Rzuć zaklęcie",
+      "item": "Użyj przedmiot",
+      "flee": "Ucieczka"
+    },
+    "turnOrder": "Kolejność tur",
+    "damage": "Obrażenia",
+    "healing": "Leczenie"
+  },
+  "accessibility": {
+    "skipToContent": "Przejdź do treści",
+    "mainNavigation": "Główna nawigacja",
+    "userMenu": "Menu użytkownika",
+    "languageSelector": "Wybór języka",
+    "themeToggle": "Przełącznik motywu",
+    "openMenu": "Otwórz menu",
+    "closeMenu": "Zamknij menu",
+    "enableHighContrast": "Włącz tryb wysokiego kontrastu",
+    "disableHighContrast": "Wyłącz tryb wysokiego kontrastu",
+    "enableAnimations": "Włącz animacje",
+    "reduceAnimations": "Ogranicz animacje",
+    "enableMagic": "Włącz Magię",
+    "disableMagic": "Wyłącz Magię"
+  }
+}

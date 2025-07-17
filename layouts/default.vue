@@ -12,18 +12,28 @@
       Skip to main content
     </a>
 
-    <!-- Aurora Background Effect -->
+    <!-- Tavern Atmosphere Background -->
+    <TavernAtmosphere
+      :intensity="atmosphereIntensity"
+      :show-candle-effects="!prefersReducedMotion"
+      :show-ember-effects="!prefersReducedMotion"
+      :show-shadow-effects="!prefersReducedMotion"
+      :show-fog-effects="true"
+      :show-fireplace-glow="showMagicParticles"
+    />
+
+    <!-- Aurora Background Effect (Reduced opacity for darker theme) -->
     <div
       class="fixed inset-0 z-0"
-      :class="{ 'opacity-10': prefersReducedMotion }"
+      :class="{ 'opacity-5': prefersReducedMotion, 'opacity-10': !prefersReducedMotion }"
       role="presentation"
       aria-hidden="true"
     >
       <AuroraBackground
-        :colors="['#8b4513', '#a0522d', '#cd853f', '#daa520']"
+        :colors="['#3c2415', '#5d3a1a', '#8b5a2b', '#a0522d']"
         :aurora-width="400"
         :aurora-height="300"
-        class="w-full h-full opacity-30"
+        class="w-full h-full opacity-20"
         :class="{ 'animate-none': prefersReducedMotion }"
       />
     </div>
@@ -109,10 +119,13 @@
 
             <!-- Accessibility Controls -->
             <div class="flex items-center space-x-2">
+              <!-- Language Switcher -->
+              <LanguageSwitcher />
+
               <!-- High Contrast Toggle -->
               <button
                 class="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
-                :aria-label="highContrastMode ? 'Disable high contrast mode' : 'Enable high contrast mode'"
+                :aria-label="highContrastMode ? t('accessibility.disableHighContrast') : t('accessibility.enableHighContrast')"
                 :aria-pressed="highContrastMode"
                 @click="toggleHighContrast"
               >
@@ -122,7 +135,7 @@
               <!-- Reduced Motion Toggle -->
               <button
                 class="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
-                :aria-label="prefersReducedMotion ? 'Enable animations' : 'Reduce animations'"
+                :aria-label="prefersReducedMotion ? t('accessibility.enableAnimations') : t('accessibility.reduceAnimations')"
                 :aria-pressed="prefersReducedMotion"
                 @click="toggleReducedMotion"
               >
@@ -133,11 +146,11 @@
               <ShimmerButton
                 class="faction-empire text-sm font-medieval focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
                 shimmer-color="rgb(255, 215, 0)"
-                :aria-label="showMagicParticles ? 'Disable magical particle effects' : 'Enable magical particle effects'"
+                :aria-label="showMagicParticles ? t('accessibility.disableMagic') : t('accessibility.enableMagic')"
                 :aria-pressed="showMagicParticles"
                 @click="toggleMagicParticles"
               >
-                {{ showMagicParticles ? 'Disable Magic' : 'Enable Magic' }}
+                {{ showMagicParticles ? t('accessibility.disableMagic') : t('accessibility.enableMagic') }}
               </ShimmerButton>
             </div>
           </div>
@@ -253,28 +266,31 @@
 import { ref, onMounted, computed, onUnmounted } from 'vue'
 import { useRoute } from '#app';
 
+// Composables
+const { t } = useI18n()
+
 // Get current route
 const route = useRoute()
 
 // Navigation items
-const navigationItems = [
-  { id: 'home', label: 'Tavern', path: '/' },
-  { id: 'characters', label: 'Characters', path: '/characters' },
-  { id: 'quests', label: 'Quests', path: '/quests' },
-  { id: 'inventory', label: 'Inventory', path: '/inventory' },
-  { id: 'settings', label: 'Settings', path: '/settings' }
-]
+const navigationItems = computed(() => [
+  { id: 'home', label: t('navigation.tavern'), path: '/' },
+  { id: 'characters', label: t('navigation.characters'), path: '/characters' },
+  { id: 'quests', label: t('navigation.quests'), path: '/quests' },
+  { id: 'inventory', label: t('navigation.inventory'), path: '/inventory' },
+  { id: 'settings', label: t('navigation.settings'), path: '/settings' }
+])
 
 // Dock items
-const dockItems = [
-  { id: 'tavern', label: 'Tavern', icon: 'home', path: '/' },
-  { id: 'characters', label: 'Characters', icon: 'users', path: '/characters' },
-  { id: 'conversations', label: 'Chat', icon: 'message-circle', path: '/conversations' },
-  { id: 'quests', label: 'Quests', icon: 'scroll', path: '/quests' },
-  { id: 'inventory', label: 'Inventory', icon: 'package', path: '/inventory' },
-  { id: 'map', label: 'Map', icon: 'map', path: '/map' },
-  { id: 'gm', label: 'GM Tools', icon: 'settings', path: '/gm-dashboard' }
-]
+const dockItems = computed(() => [
+  { id: 'tavern', label: t('navigation.tavern'), icon: 'home', path: '/' },
+  { id: 'characters', label: t('navigation.characters'), icon: 'users', path: '/characters' },
+  { id: 'conversations', label: t('navigation.conversations'), icon: 'message-circle', path: '/conversations' },
+  { id: 'quests', label: t('navigation.quests'), icon: 'scroll', path: '/quests' },
+  { id: 'inventory', label: t('navigation.inventory'), icon: 'package', path: '/inventory' },
+  { id: 'map', label: t('navigation.map'), icon: 'map', path: '/map' },
+  { id: 'gm', label: t('navigation.gmDashboard'), icon: 'settings', path: '/gm-dashboard' }
+])
 
 // Reactive state
 const showMagicParticles = ref(false)
@@ -285,6 +301,9 @@ const windowWidth = ref(0)
 // Accessibility state
 const prefersReducedMotion = ref(false)
 const highContrastMode = ref(false)
+
+// Atmosphere settings
+const atmosphereIntensity = ref<'low' | 'medium' | 'high'>('medium')
 
 // Computed properties
 const isDesktop = computed(() => windowWidth.value >= 768)

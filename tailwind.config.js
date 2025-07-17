@@ -8,6 +8,7 @@ module.exports = {
     "./app.vue",
     "./error.vue"
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -177,6 +178,9 @@ module.exports = {
         'medieval-entrance': 'medieval-entrance 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards',
         'gradient-shift': 'gradient-shift 4s ease infinite',
         'fire-flicker': 'fire-flicker 2s ease-in-out infinite alternate',
+        'candle-flicker': 'candle-flicker 3s ease-in-out infinite',
+        'ember-rise': 'ember-rise 4s ease-in-out infinite',
+        'shadow-dance': 'shadow-dance 6s ease-in-out infinite',
         'sparkle': 'sparkle 4s linear infinite',
         'beam-slide': 'beam-slide 2s linear infinite',
         'aurora-shift': 'aurora-shift 8s ease-in-out infinite',
@@ -215,12 +219,37 @@ module.exports = {
           '100%': { backgroundPosition: '0% 50%' },
         },
         'fire-flicker': {
-          '0%': { 
-            boxShadow: '0 0 20px rgba(255, 69, 0, 0.4), 0 0 40px rgba(255, 69, 0, 0.2)' 
+          '0%': {
+            boxShadow: '0 0 20px rgba(255, 69, 0, 0.4), 0 0 40px rgba(255, 69, 0, 0.2)'
           },
-          '100%': { 
-            boxShadow: '0 0 30px rgba(255, 69, 0, 0.6), 0 0 50px rgba(255, 69, 0, 0.3)' 
+          '100%': {
+            boxShadow: '0 0 30px rgba(255, 69, 0, 0.6), 0 0 50px rgba(255, 69, 0, 0.3)'
           },
+        },
+        'candle-flicker': {
+          '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+          '50%': { opacity: '0.8', transform: 'scale(0.98)' },
+          '75%': { opacity: '0.9', transform: 'scale(1.02)' }
+        },
+        'ember-rise': {
+          '0%': {
+            transform: 'translateY(0px) scale(1)',
+            opacity: '0.7'
+          },
+          '50%': {
+            transform: 'translateY(-20px) scale(1.1)',
+            opacity: '1'
+          },
+          '100%': {
+            transform: 'translateY(-40px) scale(0.8)',
+            opacity: '0'
+          }
+        },
+        'shadow-dance': {
+          '0%, 100%': { transform: 'scaleX(1) scaleY(1)' },
+          '25%': { transform: 'scaleX(1.1) scaleY(0.9)' },
+          '50%': { transform: 'scaleX(0.9) scaleY(1.1)' },
+          '75%': { transform: 'scaleX(1.05) scaleY(0.95)' }
         },
         sparkle: {
           '0%': { transform: 'translateY(0px)', opacity: '1' },

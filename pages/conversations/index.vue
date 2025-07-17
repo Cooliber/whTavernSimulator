@@ -10,8 +10,8 @@
         :spotlight-size="350"
         class="inline-block"
       >
-        <SparklesText 
-          text="Tavern Conversations"
+        <SparklesText
+          :text="$t('conversations.title')"
           class="text-5xl md:text-7xl font-medieval text-foreground"
           :sparkles-count="18"
         />
